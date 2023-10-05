@@ -16,6 +16,7 @@ import Line from "./pages/line";
 import Pie from "./pages/pie";
 import FAQ from "./pages/faq";
 import Geography from "./pages/geography";
+import { MySubPageSidebarProvider } from "./components/subpagebar/MySubPageBarContext";
 
 const App = () => {
   const [theme, colorMode] = useMode();
@@ -27,6 +28,7 @@ const App = () => {
           <div style={{ height: "100%", width: "100%" }}>
             <main>
               <Topbar />
+              <MySubPageSidebarProvider/>
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/team" element={<Team />} />

@@ -142,7 +142,7 @@ export const themeSettings = (mode) => {
               light: colors.grey[100]
             },
             background: {
-              default: colors.primary[500]
+              default: "rgba(29, 28, 52, 1)"
             }
           }
         : {
