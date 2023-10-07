@@ -8,22 +8,14 @@ import {
   } from "@mui/material";
   import Grid from "@mui/material/Unstable_Grid2";
   import { tokens } from "../../theme";
-  import { mockTransactions } from "../../data/mockData";
-  import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-  import EmailIcon from "@mui/icons-material/Email";
-  import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
-  import PersonAddIcon from "@mui/icons-material/PersonAdd";
-  import TrafficIcon from "@mui/icons-material/Traffic";
-  import Header from "../../components/Header";
-  import LineChart from "../../components/LineChart";
-  import GeographyChart from "../../components/GeographyChart";
-  import BarChart from "../../components/BarChart";
-  import StatBox from "../../components/StatBox";
-  import ProgressCircle from "../../components/ProgressCircle";
+  import LineChart from "../../components/echarts/LineChart";
+
+
   const DashboardOverview = () => {
     const theme = useTheme();
     const smScreen = useMediaQuery(theme.breakpoints.up("sm"));
     const colors = tokens(theme.palette.mode);
+    
     return (
       <Box m="34px" marginX={"42px"}>
         {/* HEADER */}
@@ -120,93 +112,69 @@ import {
           <Grid xs={12} sm={12} md={6} lg={4} xl={4}>
             <Box
                 width="100%"
-                height={"200px"}
-                backgroundColor={"red"}
-                // backgroundColor={"linear-gradient(180deg, rgba(72, 49, 157, 0.20) 1.95%, rgba(72, 49, 157, 0.00) 47.29%)"}
-                display="flex"
                 alignItems="center"
                 justifyContent="center"
                 borderRadius={"16px"}
+                border={"1px solid rgba(72, 49, 157, 0.20)"}
+                borderBottom={0}
+                className="hover:scale-x-105 hover:scale-y-110 transition-all"
             >
-                Grid 1 
+              <LineChart/>
+              <div className="!z-10" style={{background: "linear-gradient(180deg, rgba(72, 49, 157, 0.20) 0%, rgba(72, 49, 157, 0.00) 100%)"}}>
+                
+                <div style={{display: "flex", justifyContent: "space-around", borderBottom: "1px solid #333045",paddingTop:"14px", paddingBottom: "14px", margin: "-60px 5px 10px", color: "grey"}}>
+                  <div className="hover:text-white cursor-pointer z-10">Daily</div>
+                  <div className="hover:text-white cursor-pointer z-10">Weekly</div>
+                  <div className="hover:text-white cursor-pointer z-10">Monthly</div>
+                </div>
+
+                <div className="px-16 py-4 pb-6">
+                  <div className="" style={{color: "grey"}}>Revenue</div>
+                  <div className="flex justify-between items-center text-3xl">
+                    <div>$3,650.00</div>
+                    <div className="flex gap-1">
+                      <div className="w-1 h-1 bg-white rounded-full"></div>
+                      <div className="w-1 h-1 bg-white rounded-full"></div>
+                      <div className="w-1 h-1 bg-white rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+
             </Box>
           </Grid>
-        
           <Grid xs={12} sm={12} md={6} lg={4} xl={4}>
-            <Box
+          <Box
                 width="100%"
-                height={"200px"}
-                backgroundColor={"red"}
-                // backgroundColor={"linear-gradient(180deg, rgba(72, 49, 157, 0.20) 1.95%, rgba(72, 49, 157, 0.00) 47.29%)"}
-                display="flex"
                 alignItems="center"
                 justifyContent="center"
                 borderRadius={"16px"}
+                border={"1px solid rgba(72, 49, 157, 0.20)"}
+                borderBottom={0}
+                className="hover:scale-x-105 hover:scale-y-110 transition-all"
             >
-                Grid 1 
+              <LineChart/>
+              <div className="!z-10" style={{background: "linear-gradient(180deg, rgba(72, 49, 157, 0.20) 0%, rgba(72, 49, 157, 0.00) 100%)"}}>
+                
+                <div className="px-16 py-[48px] mt-[-60px]">
+                  <div className="" style={{color: "grey"}}>Product Sales</div>
+                  <div className="flex justify-between items-center text-3xl">
+                    <div>1,340</div>
+                    <div className="flex gap-1">
+                      <div className="w-1 h-1 bg-white rounded-full"></div>
+                      <div className="w-1 h-1 bg-white rounded-full"></div>
+                      <div className="w-1 h-1 bg-white rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+
             </Box>
           </Grid>
         
-          <Grid xs={12} sm={12} md={6} lg={4} xl={4}>
-            <Box
-                width="100%"
-                height={"200px"}
-                backgroundColor={"red"}
-                // backgroundColor={"linear-gradient(180deg, rgba(72, 49, 157, 0.20) 1.95%, rgba(72, 49, 157, 0.00) 47.29%)"}
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                borderRadius={"16px"}
-            >
-                Grid 1 
-            </Box>
-          </Grid>
-        
-          <Grid xs={12} sm={12} md={6} lg={4} xl={4}>
-            <Box
-                width="100%"
-                height={"200px"}
-                backgroundColor={"red"}
-                // backgroundColor={"linear-gradient(180deg, rgba(72, 49, 157, 0.20) 1.95%, rgba(72, 49, 157, 0.00) 47.29%)"}
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                borderRadius={"16px"}
-            >
-                Grid 1 
-            </Box>
-          </Grid>
-        
-          <Grid xs={12} sm={12} md={6} lg={4} xl={4}>
-            <Box
-                width="100%"
-                height={"200px"}
-                backgroundColor={"red"}
-                // backgroundColor={"linear-gradient(180deg, rgba(72, 49, 157, 0.20) 1.95%, rgba(72, 49, 157, 0.00) 47.29%)"}
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                borderRadius={"16px"}
-            >
-                Grid 1 
-            </Box>
-          </Grid>
-        
-          <Grid xs={12} sm={12} md={6} lg={4} xl={4}>
-            <Box
-                width="100%"
-                height={"200px"}
-                backgroundColor={"red"}
-                // backgroundColor={"linear-gradient(180deg, rgba(72, 49, 157, 0.20) 1.95%, rgba(72, 49, 157, 0.00) 47.29%)"}
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                borderRadius={"16px"}
-            >
-                Grid 1 
-            </Box>
-          </Grid>
-        
+                 
           
 {/*   
           <Grid

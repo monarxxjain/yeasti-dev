@@ -17,6 +17,7 @@ import FAQ from "./pages/faq";
 import Geography from "./pages/geography";
 import { MySubPageSidebarProvider } from "./components/subpagebar/MySubPageBarContext";
 import DashboardOverview from "./pages/dashboard/Overview";
+import { useEffect } from "react";
 
 const App = () => {
   const [theme, colorMode] = useMode();
