@@ -4,8 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { MyProSidebarProvider } from "./pages/global/sidebar/sidebarContext";
 
 import Topbar from "./pages/global/Topbar";
-
-import Dashboard from "./pages/dashboard";
+import { Navigate } from "react-router-dom";
 import Team from "./pages/team";
 import Invoices from "./pages/invoices";
 import Contacts from "./pages/contacts";
@@ -17,20 +16,48 @@ import Pie from "./pages/pie";
 import FAQ from "./pages/faq";
 import Geography from "./pages/geography";
 import { MySubPageSidebarProvider } from "./components/subpagebar/MySubPageBarContext";
+import DashboardOverview from "./pages/dashboard/Overview";
 
 const App = () => {
   const [theme, colorMode] = useMode();
+  const dashboardSubPages = [
+    {title: "Overview", to: "/dashboard"},
+    {title: "Operational Snapshot", to: "/dashboard/operational-snapshot"},
+    {title: "Sales Insights", to: "/dashboard/sales-insights"},
+    {title: "Customer Interactions", to: "/dashboard/customer-interactions"},
+    {title: "Employee Productivity", to: "/dashboard/employee-productivity"},
+    {title: "Marketing", to: "/dashboard/marketing"},
+    {title: "Supply Chain", to: "/dashboard/supply-chain"},
+    {title: "Overview", to: "/dashboard/overview"},
+    {title: "Overview", to: "/dashboard/overview"},
+    {title: "Overview", to: "/dashboard/overview"},
+    {title: "Overview", to: "/dashboard/overview"},
+    {title: "Overview", to: "/dashboard/overview"},
+  ]
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <MyProSidebarProvider>
           <div style={{ height: "100%", width: "100%" }}>
-            <main>
+            <main style={{display: "block"}}>
               <Topbar />
-              <MySubPageSidebarProvider/>
+              <MySubPageSidebarProvider subPages={dashboardSubPages}>
+                <Routes>
+                  {/* Dashboard Paths */}
+                  <Route path="/" element={<Navigate to="/dashboard"/>}/>
+                  <Route path="/dashboard" element={<><DashboardOverview/></>} />
+                  {/* <Route path="/dashboard/operational-snapshot" element={<><DashboardOperationalSnapshot/></>} />
+                  <Route path="/dashboard/sales-insights" element={<><DashboardSalesInsights/></>} />
+                  <Route path="/dashboard/marketing" element={<><DashboardMarketing/></>} />
+                  <Route path="/dashboard/supply-chain" element={<><DashboardSupplyChain/></>} />
+                  <Route path="/dashboard/employee-productivity" element={<><DashboardEmployeeProductivity/></>} /> */}
+                </Routes>
+              </MySubPageSidebarProvider>
+
+
+
               <Routes>
-                <Route path="/" element={<Dashboard />} />
                 <Route path="/team" element={<Team />} />
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/invoices" element={<Invoices />} />

@@ -30,85 +30,13 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
   );
 };
 
-const SubPageBar = () => {
+const SubPageBar = ({subPages}) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [selected, setSelected] = useState("Dashboard");
   const { sidebarRTL, setSidebarRTL, sidebarImage } = useSubPageBarContext();
   const { collapseSidebar, toggleSidebar, collapsed, broken } = useProSidebar();
-  const pages = [
-    {
-      title: "Dashboard",
-      to: "/",
-      icon: <HomeOutlinedIcon />
-    },
-    {
-      title: "Personal",
-      to: "/",
-      icon: <SmartDisplayOutlinedIcon />
-    },
-    {
-      title: "inventory",
-      to: "/",
-      icon: <SubscriptionsOutlinedIcon />
-    },
-    {
-      title: "Sales",
-      to: "/",
-      icon: <MusicVideoIcon />
-    },
-    {
-      title: "Orders",
-      to: "/",
-      icon: <SlideshowIcon />
-    },
-    {
-      title: "Reports",
-      to: "/",
-      icon: <SlideshowIcon />
-    },
-    {
-      title: "Administration",
-      to: "/",
-      icon: <SlideshowIcon />
-    },
-    {
-      title: "Yeasti Ai",
-      to: "/",
-      icon: <SlideshowIcon />
-    },
-    {
-      title: "Customers",
-      to: "/",
-      icon: <SlideshowIcon />
-    },
-    {
-      title: "Suppliers",
-      to: "/",
-      icon: <SlideshowIcon />
-    },
-    {
-      title: "Logistics",
-      to: "/",
-      icon: <SlideshowIcon />
-    },
-    {
-      title: "Marketing",
-      to: "/",
-      icon: <SlideshowIcon />
-    },
-    {
-      title: "Financials",
-      to: "/",
-      icon: <SlideshowIcon />
-    },
-    {
-      title: "Compliance",
-      to: "/",
-      icon: <SlideshowIcon />
-    },
-
-  ]
+  const pages = subPages;
   return (
     <Box
       sx={{
@@ -149,7 +77,6 @@ const SubPageBar = () => {
                 key={id}
                 title={page.title}
                 to={page.to}
-                icon={page.icon}
                 selected={selected}
                 setSelected={setSelected}
               />

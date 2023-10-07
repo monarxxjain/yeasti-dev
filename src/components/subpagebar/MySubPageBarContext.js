@@ -4,7 +4,7 @@ import SubPageBar from "./SubPageBar";
 
 const SubPageBarContext = createContext({});
 
-export const MySubPageSidebarProvider = ({ children }) => {
+export const MySubPageSidebarProvider = ({ children, subPages }) => {
   const [sidebarRTL, setSidebarRTL] = useState(false);
   const [sidebarBackgroundColor, setSidebarBackgroundColor] =
     useState(undefined);
@@ -23,13 +23,8 @@ export const MySubPageSidebarProvider = ({ children }) => {
           setSidebarRTL,
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: sidebarRTL ? "row-reverse" : "row",
-          }}
-        >
-          <SubPageBar />
+        <div>
+          <SubPageBar subPages={subPages}/>
           {children}
         </div>
       </SubPageBarContext.Provider>
