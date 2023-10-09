@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, Sidebar, MenuItem } from "react-pro-sidebar";
 import { useProSidebar } from "react-pro-sidebar";
 
@@ -37,6 +37,30 @@ const SubPageBar = ({subPages}) => {
   const { sidebarRTL, setSidebarRTL, sidebarImage } = useSubPageBarContext();
   const { collapseSidebar, toggleSidebar, collapsed, broken } = useProSidebar();
   const pages = subPages;
+  const [dashWidth, setDashWidth] = useState((window.innerWidth-260))
+  window.addEventListener("resize",()=>{
+    subPageBarWidth()
+  })
+  function subPageBarWidth(){
+    if(window.innerWidth>=768 && !collapsed){
+      const calcValue = window.innerWidth - 260
+      setDashWidth(calcValue)
+    }
+    else{
+      const calcValue = window.innerWidth - 100
+      setDashWidth(calcValue)
+      
+      // document.body.style.overflowX="hidden"
+      // document.getElementById("rightBody").style.position="absolute "
+      // document.getElementById("rightBody").style.left= "90px"
+      // document.getElementById("myProSidebar").style.backdropFilter="blur(20px)"
+      // document.getElementById("MuiBox-root").style.left= "90px"
+    }
+  }
+  useEffect(()=>{
+    subPageBarWidth()
+
+  },[])
   return (
     <Box
       sx={{
@@ -68,7 +92,9 @@ const SubPageBar = ({subPages}) => {
     >
       <Sidebar
         backgroundColor={"background: linear-gradient(168deg, rgba(46, 51, 90, 0.50) 1.62%, rgba(28, 27, 51, 0.50) 95.72%)"}
-        width="83vmax"
+        // className="lg:!w-[75vmax] xl:!w-[80.2vmax] 2xl:!w-[83vw]"
+        // className="!w-full"
+        width={`${dashWidth}px`}
       >
         <Menu iconshape="square">
           <Box marginX={!collapsed ? "16px" : undefined} display={"flex"} overflow={"scroll"}>

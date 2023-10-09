@@ -7,7 +7,7 @@ import { useSidebarContext } from "./sidebarContext";
 
 import { Link } from "react-router-dom";
 import { tokens } from "../../../theme";
-import { useTheme, Box, Typography, IconButton } from "@mui/material";
+import { useTheme, Box, Typography, IconButton, collapseClasses } from "@mui/material";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
@@ -139,6 +139,28 @@ const MyProSidebar = () => {
     },
 
   ]
+  useEffect(()=>{
+    if(window.innerWidth<768){
+      collapseSidebar()
+    }
+  },[])
+  useEffect(()=>{
+    if(window.innerWidth<768 && !collapsed){
+      document.body.style.overflowX="hidden"
+      document.getElementById("rightBody").style.marginLeft="-155px"
+      // document.getElementById("rightBody").style.position="absolute "
+      // document.getElementById("rightBody").style.left= "90px"
+      document.getElementById("myProSidebar").style.backdropFilter="blur(20px)"
+    }
+    else if(window.innerWidth<768 && collapsed){
+      document.getElementById("rightBody").style.marginLeft="0px"
+    }
+  },[collapsed])
+  // window.addEventListener("resize",()=>{
+  //   if(window.innerWidth<768){
+  //     collapseSidebar()
+  //   }
+  // })
   return (
     <Box
       sx={[{
@@ -183,8 +205,7 @@ const MyProSidebar = () => {
         },
       } : {}]}
     >
-      <Sidebar
-        breakPoint="md"
+      <Sidebar id="myProSidebar"
         rtl={sidebarRTL}
         backgroundColor={"background: linear-gradient(168deg, rgba(46, 51, 90, 0.50) 1.62%, rgba(28, 27, 51, 0.50) 95.72%)"}
         image={sidebarImage}

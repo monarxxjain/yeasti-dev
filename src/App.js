@@ -40,8 +40,8 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <MyProSidebarProvider>
-          <div style={{ height: "100%", width: "100%" }}>
-            <main style={{display: "block"}}>
+          <div id="rightBody" style={{ height: "100%", width: "100%" }}>
+            <main style={{display: "block", width: "min-content"}}>
               <Topbar />
               <MySubPageSidebarProvider subPages={dashboardSubPages}>
                 <Routes>

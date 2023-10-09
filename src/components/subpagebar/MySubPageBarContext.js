@@ -23,7 +23,7 @@ export const MySubPageSidebarProvider = ({ children, subPages }) => {
           setSidebarRTL,
         }}
       >
-        <div>
+        <div style={{width: "min-content !important"}}>
           <SubPageBar subPages={subPages}/>
           {children}
         </div>

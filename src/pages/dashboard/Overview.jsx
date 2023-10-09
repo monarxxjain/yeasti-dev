@@ -110,7 +110,7 @@ import Arrow from "../../assets/dashboardOverview/Arrow";
       },
     ]
     return (
-      <Box m="34px" marginX={"42px"}>
+      <Box m="34px" className="!mx-[42px] md:max-w-[35rem] nr:max-w-none">
 
   
         <Grid container rowSpacing={"60px"} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
@@ -243,7 +243,7 @@ import Arrow from "../../assets/dashboardOverview/Arrow";
                   borderRadius={"16px"}
                   border={"1px solid rgba(72, 49, 157, 0.20)"}
                   borderBottom={0}
-                  className="hover:scale-x-105 hover:scale-y-110 transition-all relative px- py-2 h-full overflow-x-hidden max-h-[370px] h-full"
+                  className="hover:scale-x-105 hover:scale-y-110 transition-all relative px- py-2 h-full overflow-x-hidden max-h-[370px]"
               >
                 <div className="flex flex-col justify-between h-full  px-4">
                   {chats.map((chat, id)=> {
