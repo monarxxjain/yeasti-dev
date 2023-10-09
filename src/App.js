@@ -41,7 +41,7 @@ const App = () => {
         <CssBaseline />
         <MyProSidebarProvider>
           <div id="rightBody" style={{ height: "100%", width: "100%" }}>
-            <main style={{display: "block", width: "min-content"}}>
+            <main style={{display: "block", width: "min-content !important"}}>
               <Topbar />
               <MySubPageSidebarProvider subPages={dashboardSubPages}>
                 <Routes>

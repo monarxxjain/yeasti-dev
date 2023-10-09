@@ -110,7 +110,7 @@ import Arrow from "../../assets/dashboardOverview/Arrow";
       },
     ]
     return (
-      <Box m="34px" className="!mx-[42px] md:max-w-[35rem] nr:max-w-none">
+      <Box m="34px" className="!mx-[42px] max-w-[20rem] xxs:max-w-[30rem] md:max-w-[35rem] nr:!max-w-full ">
 
   
         <Grid container rowSpacing={"60px"} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
@@ -182,10 +182,10 @@ import Arrow from "../../assets/dashboardOverview/Arrow";
           </Grid> */}
 
           <Grid xs={12} sm={12} md={6} lg={4} xl={4}>
-            
+            Grid 2
           </Grid>
           <Grid xs={12} sm={12} md={6} lg={4} xl={4}>
-
+            Grid 3
           </Grid>
 
           <Grid xs={12} sm={12} md={6} lg={4} xl={4}>

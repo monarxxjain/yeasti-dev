@@ -49,7 +49,7 @@ const SubPageBar = ({subPages}) => {
     else{
       const calcValue = window.innerWidth - 100
       setDashWidth(calcValue)
-      
+      document.getElementById("rightBody").style.width=`${calcValue}px`
       // document.body.style.overflowX="hidden"
       // document.getElementById("rightBody").style.position="absolute "
       // document.getElementById("rightBody").style.left= "90px"
