@@ -18,6 +18,7 @@ const LineChart = () => {
                 xAxis: [
                     {
                         type: 'category',
+                        boundaryGap: false,
                         axisTick: {
                         },
                         splitLine: {
@@ -49,6 +50,7 @@ const LineChart = () => {
                     },
                     {
                         type: 'category',
+                        boundaryGap: false,
                         axisTick: {
                             alignWithLabel: true
                         },
@@ -202,7 +204,7 @@ const LineChart = () => {
                     }
                 ]
             }}
-            style={{ height: "290px", width: "120%", marginTop: "-58px", marginLeft: "-40px" }}
+            style={{ height: "290px", width: "120%", marginTop: "-58px", marginLeft: "-3rem" }}
         />
     )
 }
