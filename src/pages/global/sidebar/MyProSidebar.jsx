@@ -141,7 +141,7 @@ const MyProSidebar = () => {
   ]
   useEffect(()=>{
     if(window.innerWidth<768){
-      collapseSidebar()
+      // collapseSidebar()
     }
   },[])
   useEffect(()=>{

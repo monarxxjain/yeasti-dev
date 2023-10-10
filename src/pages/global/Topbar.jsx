@@ -10,7 +10,7 @@ const Topbar = () => {
   const colors = tokens(theme.palette.mode);
 
   return (
-    <Box display="flex" justifyContent="space-between" p={1}>
+    <Box display="flex" justifyContent="space-between" gap={1} p={1}>
       <div style={{visibility: "hidden"}}>Hi</div>
       <Box display="flex">
         <Box
@@ -41,14 +41,14 @@ const Topbar = () => {
         </Box>
       </Box>
       <Box display="flex" >
-        <IconButton type="button" style={{padding: "0 15px 6px 13px"}}>
+        <IconButton type="button" className="!hidden md:block !pt-0 !pe-[15px] !pb-[6px] !ps-[13px]">
           <VideoCamIcon/>
         </IconButton>
-        <IconButton type="button" style={{padding: "5px 18px 6px 18px"}}>
+        <IconButton type="button" className="md:!pt-[5px] md:!pe-[18px] md:!pb-[6px] md:!ps-[18px]">
           <NotificationIcon />
         </IconButton>
-        <IconButton type="button" style={{padding: "5px 4px 6px 4px", marginLeft: "5px"}}>
-          <div style={{backgroundColor: "#22D7FF", padding: "7px 15px", borderRadius: "50%"}}>A</div>
+        <IconButton type="button" className="md:!pt-[5px] md:!pe-[4px] md:!pb-[6px] md:!ps-[4px]">
+          <div style={{backgroundColor: "#22D7FF", borderRadius: "50%"}} className="px-[8px] md:!py-[7px] md:!px-[15px]">A</div>
         </IconButton>
       </Box>
     </Box>
