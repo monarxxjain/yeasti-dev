@@ -205,7 +205,7 @@ const LineChart = () => {
                 ]
             }}
             style={{ height: "290px", marginTop: "-58px" }}
-            className='w-[100%] lg:!w-[120%] lg:!ms-[-3rem]'
+            className='w-[100%] lg:!w-[100%] lg:!ms-[-3rem]'
         />
     )
 }

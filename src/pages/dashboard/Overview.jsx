@@ -21,6 +21,8 @@ import Area1 from "../../assets/dashboardOverview/Area1";
 import Area2 from "../../assets/dashboardOverview/Area2";
 import Area3 from "../../assets/dashboardOverview/Area3";
 import Arrow from "../../assets/dashboardOverview/Arrow";
+import PieChart from "../../components/echarts/PieChart";
+import BarChart from "../../components/echarts/BarChart";
   const DashboardOverview = () => {
     const theme = useTheme();
     const smScreen = useMediaQuery(theme.breakpoints.up("sm"));
@@ -181,12 +183,66 @@ import Arrow from "../../assets/dashboardOverview/Arrow";
             </Box>
           </Grid> */}
 
-          <Grid xs={12} sm={12} md={6} lg={4} xl={4}>
-            Grid 2
+<Grid xs={12} sm={12} md={6} lg={4} xl={4}>
+            <Box
+                  width="100%"
+                  alignItems="center"
+                  justifyContent="center"
+                  borderRadius={"16px"}
+                  border={"1px solid rgba(72, 49, 157, 0.20)"}
+                  borderBottom={0}
+                  className="hover:scale-x-105 hover:scale-y-110 transition-all max-h-[370px] h-full"
+            >
+              <PieChart/>
+              <div className="!z-10" style={{background: "linear-gradient(180deg, rgba(72, 49, 157, 0.20) 0%, rgba(72, 49, 157, 0.00) 100%)"}}>
+                
+                <div className="px-16 py-[40px] mt-[-20px]">
+                  <div className="" style={{color: "grey"}}>Product Sales</div>
+                  <div className="flex justify-between items-center text-3xl">
+                    <div>1,340</div>
+                    <div className="flex gap-1">
+                      <div className="w-1 h-1 bg-white rounded-full"></div>
+                      <div className="w-1 h-1 bg-white rounded-full"></div>
+                      <div className="w-1 h-1 bg-white rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </Box>
           </Grid>
+
           <Grid xs={12} sm={12} md={6} lg={4} xl={4}>
-            Grid 3
+            <Box
+                  width="100%"
+                  alignItems="center"
+                  justifyContent="center"
+                  borderRadius={"16px"}
+                  border={"1px solid rgba(72, 49, 157, 0.20)"}
+                  borderBottom={0}
+                  className="hover:scale-x-105 hover:scale-y-110 transition-all max-h-[370px] h-full"
+            >
+              <BarChart />
+              <div className="!z-10" style={{background: "linear-gradient(180deg, rgba(72, 49, 157, 0.20) 0%, rgba(72, 49, 157, 0.00) 100%)"}}>
+                
+                <div className="px-16 py-[40px] mt-[-20px]">
+                  <div className="" style={{color: "grey"}}>Product Sales</div>
+                  <div className="flex justify-between items-center text-3xl">
+                    <div>1,340</div>
+                    <div className="flex gap-1">
+                      <div className="w-1 h-1 bg-white rounded-full"></div>
+                      <div className="w-1 h-1 bg-white rounded-full"></div>
+                      <div className="w-1 h-1 bg-white rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </Box>
           </Grid>
+
+          
+          
 
           <Grid xs={12} sm={12} md={6} lg={4} xl={4}>
             <Box
