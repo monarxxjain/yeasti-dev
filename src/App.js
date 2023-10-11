@@ -18,6 +18,12 @@ import Geography from "./pages/geography";
 import { MySubPageSidebarProvider } from "./components/subpagebar/MySubPageBarContext";
 import DashboardOverview from "./pages/dashboard/Overview";
 import { useEffect } from "react";
+import DashboardOperationalSnapshot from "./pages/dashboard/OperationalSnapshot";
+import DashboardSalesInsights from "./pages/dashboard/SalesInsights";
+import DashboardMarketing from "./pages/dashboard/Marketing";
+import DashboardSupplyChain from "./pages/dashboard/SupplyChain";
+import DashboardEmployeeProductivity from "./pages/dashboard/EmployeeProductivity";
+import DashboardCustomerInteractions from "./pages/dashboard/CustomerInteractions";
 
 const App = () => {
   const [theme, colorMode] = useMode();
@@ -35,16 +41,20 @@ const App = () => {
     {title: "Overview", to: "/dashboard/overview"},
     {title: "Overview", to: "/dashboard/overview"},
   ]
-  const check = sessionStorage.getItem("dontReload")
-  if(check!=1){
-    console.log(check)
-    setTimeout(() => {
+  // const check = sessionStorage.getItem("dontReload")
+  // if(check!=1){
+  //   console.log(check)
+  //   setTimeout(() => {
       
-      window.location.reload()
-    }, 100);
+  //     window.location.reload()
+  //   }, 100);
 
-  }
-  sessionStorage.setItem("dontReload",1)
+  // }
+  // sessionStorage.setItem("dontReload",1)
+
+  // useEffect(()=>{
+  //   sessionStorage.setItem("check",1)
+  // },[])
 
   return (
     <ColorModeContext.Provider value={colorMode}>
@@ -59,11 +69,12 @@ const App = () => {
                   {/* Dashboard Paths */}
                   <Route path="/" element={<Navigate to="/dashboard"/>}/>
                   <Route path="/dashboard" element={<><DashboardOverview/></>} />
-                  {/* <Route path="/dashboard/operational-snapshot" element={<><DashboardOperationalSnapshot/></>} />
+                  <Route path="/dashboard/operational-snapshot" element={<><DashboardOperationalSnapshot/></>} />
                   <Route path="/dashboard/sales-insights" element={<><DashboardSalesInsights/></>} />
                   <Route path="/dashboard/marketing" element={<><DashboardMarketing/></>} />
                   <Route path="/dashboard/supply-chain" element={<><DashboardSupplyChain/></>} />
-                  <Route path="/dashboard/employee-productivity" element={<><DashboardEmployeeProductivity/></>} /> */}
+                  <Route path="/dashboard/employee-productivity" element={<><DashboardEmployeeProductivity/></>} />
+                  <Route path="/dashboard/customer-interactions" element={<><DashboardCustomerInteractions/></>} />
                 </Routes>
               </MySubPageSidebarProvider>
 

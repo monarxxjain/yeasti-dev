@@ -17,13 +17,13 @@ import {
   import Chrome from "../../assets/dashboardOverview/Chrome";
   import Firefox from "../../assets/dashboardOverview/Firefox";
   import MessageDeliveredIcon from "../../assets/dashboardOverview/MessageDeliveredIcon";
-import Area1 from "../../assets/dashboardOverview/Area1";
-import Area2 from "../../assets/dashboardOverview/Area2";
-import Area3 from "../../assets/dashboardOverview/Area3";
-import Arrow from "../../assets/dashboardOverview/Arrow";
-import PieChart from "../../components/echarts/PieChart";
-import BarChart from "../../components/echarts/BarChart";
-import { useEffect } from "react";
+  import Area1 from "../../assets/dashboardOverview/Area1";
+  import Area2 from "../../assets/dashboardOverview/Area2";
+  import Area3 from "../../assets/dashboardOverview/Area3";
+  import Arrow from "../../assets/dashboardOverview/Arrow";
+  import PieChart from "../../components/echarts/PieChart";
+  import BarChart from "../../components/echarts/BarChart";
+  import { useEffect } from "react";
   const DashboardOverview = () => {
     const theme = useTheme();
     const smScreen = useMediaQuery(theme.breakpoints.up("sm"));

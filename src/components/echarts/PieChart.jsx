@@ -10,14 +10,16 @@ const PieChart = () => {
             },
             legend: {
               top: 'center',
-              right: '5%',
+              right: '0%',
               orient: 'vertical',
               textStyle: {
                 color: "#fff"
-              }
+              },
+              marginLeft: "200px"
             },
             series: [
               {
+                left:"-25%",
                 name: 'Access From',
                 type: 'pie',
                 radius: ['40%', '70%'],
@@ -47,7 +49,8 @@ const PieChart = () => {
               }
             ]
           }}
-          style={{width: "100%", height: "200px", marginLeft: "-120px", gap: "100px", marginTop: "-10px"}}
+          style={{ height: "200px", marginLeft: "-2rem", marginTop: "-10px"}}
+          className='!w-[100%] !max-w-[25rem]'
     />
   )
 }

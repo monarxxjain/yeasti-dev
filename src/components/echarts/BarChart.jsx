@@ -52,7 +52,8 @@ const BarChart = () => {
               }
             ]
           }}
-          style={{ marginTop: "-40px", width: "80%", height: "230px"}}
+          style={{ marginTop: "-40px", height: "230px"}}
+          className='!w-[100%] !max-w-[25rem]'
     />
   )
 }
