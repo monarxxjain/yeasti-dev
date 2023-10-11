@@ -35,6 +35,17 @@ const App = () => {
     {title: "Overview", to: "/dashboard/overview"},
     {title: "Overview", to: "/dashboard/overview"},
   ]
+  const check = sessionStorage.getItem("dontReload")
+  if(check!=1){
+    console.log(check)
+    setTimeout(() => {
+      
+      window.location.reload()
+    }, 100);
+
+  }
+  sessionStorage.setItem("dontReload",1)
+
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>

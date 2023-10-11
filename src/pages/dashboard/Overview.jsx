@@ -23,6 +23,7 @@ import Area3 from "../../assets/dashboardOverview/Area3";
 import Arrow from "../../assets/dashboardOverview/Arrow";
 import PieChart from "../../components/echarts/PieChart";
 import BarChart from "../../components/echarts/BarChart";
+import { useEffect } from "react";
   const DashboardOverview = () => {
     const theme = useTheme();
     const smScreen = useMediaQuery(theme.breakpoints.up("sm"));
