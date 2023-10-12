@@ -66,6 +66,7 @@ const MyProSidebar = () => {
   const [selected, setSelected] = useState("Dashboard");
   const { sidebarRTL, setSidebarRTL, sidebarImage } = useSidebarContext();
   const { collapseSidebar, toggleSidebar, collapsed, broken } = useProSidebar();
+  const [mobileView, setMobileView] = useState(false)
   const pages = [
     {
       title: "Dashboard",
@@ -141,11 +142,21 @@ const MyProSidebar = () => {
   ]
   useEffect(()=>{
     if(window.innerWidth<768){
-      // collapseSidebar()
+      collapseSidebar()
     }
   },[])
   useEffect(()=>{
-    if(window.innerWidth<768 && !collapsed){
+    if(window.innerWidth<500 && !collapsed){
+      setMobileView(true)
+      document.body.style.overflowX="hidden"
+      // document.getElementById("rightBody").style.marginLeft="-250px"
+      // document.getElementById("rightBody").style.position="absolute "
+      // document.getElementById("rightBody").style.left= "90px"
+      
+      document.getElementById("myProSidebar").style.backdropFilter="blur(20px)"
+
+    }
+    else if(window.innerWidth<768 && !collapsed){
       document.body.style.overflowX="hidden"
       document.getElementById("rightBody").style.marginLeft="-155px"
       // document.getElementById("rightBody").style.position="absolute "
@@ -164,16 +175,17 @@ const MyProSidebar = () => {
   return (
     <Box
       sx={[{
-        position: "sticky",
+        position: (!mobileView || !collapsed) ? "sticky" : "absolute xxs:!sticky",
         display: "flex",
-        height: "100vh",
+        height: (!mobileView || !collapsed) ? "100vh" : "min-content",
         top: 0,
+        width: mobileView ? "1px" : "min-content",
         bottom: 0,
-        zIndex: 10000,
+        zIndex: collapsed ?  10000 : 12000,
         "& .sidebar": {
           border: "none",
-          background: "linear-gradient(168deg, rgba(46, 51, 90, 0.50) 1.62%, rgba(28, 27, 51, 0.50) 95.72%)",
-          boxShadow: "inset -50px -10px 60px -40px rgba(59, 38, 123, 0.70)"
+          background:  (!mobileView || !collapsed) ? "linear-gradient(168deg, rgba(46, 51, 90, 0.50) 1.62%, rgba(28, 27, 51, 0.50) 95.72%)" : "",
+          boxShadow:  (!mobileView || !collapsed) ? "inset -50px -10px 60px -40px rgba(59, 38, 123, 0.70)" : ""
         },
         "& .menu-icon": {
           backgroundColor: "transparent !important",
@@ -212,16 +224,16 @@ const MyProSidebar = () => {
         
       >
         <Menu iconshape="square">
-          <MenuItem
+          {!mobileView && <MenuItem
             icon={
               <MacButtonsIcon/>
             }
             style={!collapsed ? {marginLeft: "20px", marginTop: "10px"} : {marginLeft: "2px", marginTop: "10px"}}
           >
-          </MenuItem>
+          </MenuItem>}
           <MenuItem
             style={{
-              margin: "10px 0 0 0",
+              margin: (!mobileView || !collapsed) ? "10px 0 0 0" : "0",
               color: colors.grey[100],
             }}
           >
@@ -230,7 +242,7 @@ const MyProSidebar = () => {
                 display="flex"
                 justifyContent="space-between"
                 alignItems="center"
-                ml="7px"
+                // ml="7px"
               >
                 <MenuOutlinedIcon onClick={() => collapseSidebar()} />
               </Box>
@@ -251,7 +263,7 @@ const MyProSidebar = () => {
             )}
           </MenuItem>
           
-          <Box marginX={!collapsed ? "16px" : undefined}>
+          {(!mobileView || !collapsed) && <Box marginX={!collapsed ? "16px" : undefined}>
             {pages.map((page, id)=>{
               return <Item 
                 key={id}
@@ -262,7 +274,7 @@ const MyProSidebar = () => {
                 setSelected={setSelected}
               />
             })}
-          </Box>
+          </Box>}
         </Menu>
       </Sidebar>
     </Box>

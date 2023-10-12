@@ -21,8 +21,10 @@ const Topbar = () => {
             borderRadius: "40px",
             height: "min-content",
             border: "1px solid rgba(255, 255, 255, 0.20)",
-            background: "linear-gradient(135deg, rgba(15, 85, 232, 0.10) 0%, rgba(157, 223, 243, 0.10) 100%)"
+            background: "linear-gradient(135deg, rgba(15, 85, 232, 0.10) 0%, rgba(157, 223, 243, 0.10) 100%)",
+            zIndex: "11000"
           }}
+          className="!ms-[40px] xxs:!ms-0"
         >
           <SearchIcon style={{margin: "auto 10px", marginLeft: "10px", height: "20px"}}/>
           <InputBase sx={{ ml: 1, mr: 1, flex: 1}} className="lg:w-[300px] xl:w-[400px]"/>
