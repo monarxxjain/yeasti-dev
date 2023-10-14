@@ -5,19 +5,8 @@ import { MyProSidebarProvider } from "./pages/global/sidebar/sidebarContext";
 
 import Topbar from "./pages/global/Topbar";
 import { Navigate } from "react-router-dom";
-import Team from "./pages/team";
-import Invoices from "./pages/invoices";
-import Contacts from "./pages/contacts";
-import Form from "./pages/form";
-import Calendar from "./pages/calendar";
-import Bar from "./pages/bar";
-import Line from "./pages/line";
-import Pie from "./pages/pie";
-import FAQ from "./pages/faq";
-import Geography from "./pages/geography";
 import { MySubPageSidebarProvider } from "./components/subpagebar/MySubPageBarContext";
 import DashboardOverview from "./pages/dashboard/Overview";
-import { useEffect } from "react";
 import DashboardOperationalSnapshot from "./pages/dashboard/OperationalSnapshot";
 import DashboardSalesInsights from "./pages/dashboard/SalesInsights";
 import DashboardMarketing from "./pages/dashboard/Marketing";
@@ -35,6 +24,15 @@ const App = () => {
     {title: "Employee Productivity", to: "/dashboard/employee-productivity"},
     {title: "Marketing", to: "/dashboard/marketing"},
     {title: "Supply Chain", to: "/dashboard/supply-chain"}
+  ]
+  const personalSubPages = [
+    {title: "PersonalSub1", to: "/personal/sub1"},
+    {title: "PersonalSub2", to: "/personal/sub2"},
+    {title: "PersonalSub3", to: "/personal/sub3"},
+    {title: "PersonalSub4", to: "/personal/sub4"},
+    {title: "PersonalSub5", to: "/personal/sub5"},
+    {title: "PersonalSub6", to: "/personal/sub6"},
+    {title: "PersonalSub7", to: "/personal/sub7"}
   ]
   window.addEventListener("orientationchange", ()=>{
     window.location.reload()
@@ -61,20 +59,18 @@ const App = () => {
                 </Routes>
               </MySubPageSidebarProvider>
 
+              {/* <MySubPageSidebarProvider subPages={personalSubPages}>
+                <Routes>
+                  <Route path="/personal/sub1" element={<><DashboardOverview/></>} />
+                  <Route path="/personal/sub2" element={<><DashboardOperationalSnapshot/></>} />
+                  <Route path="/personal/sub3" element={<><DashboardSalesInsights/></>} />
+                  <Route path="/personal/sub4" element={<><DashboardMarketing/></>} />
+                  <Route path="/personal/sub5" element={<><DashboardSupplyChain/></>} />
+                  <Route path="/personal/sub6" element={<><DashboardEmployeeProductivity/></>} />
+                  <Route path="/personal/sub7" element={<><DashboardCustomerInteractions/></>} />
+                </Routes>
+              </MySubPageSidebarProvider> */}
 
-
-              <Routes>
-                <Route path="/team" element={<Team />} />
-                <Route path="/contacts" element={<Contacts />} />
-                <Route path="/invoices" element={<Invoices />} />
-                <Route path="/form" element={<Form />} />
-                <Route path="/bar" element={<Bar />} />
-                <Route path="/pie" element={<Pie />} />
-                <Route path="/line" element={<Line />} />
-                <Route path="/faq" element={<FAQ />} />
-                <Route path="/calendar" element={<Calendar />} />
-                <Route path="/geography" element={<Geography />} />
-              </Routes>
             </main>
           </div>
         </MyProSidebarProvider>

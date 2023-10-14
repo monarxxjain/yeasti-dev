@@ -75,7 +75,7 @@ const MyProSidebar = () => {
     },
     {
       title: "Personal",
-      to: "/",
+      to: "/personal/sub1",
       icon: <SmartDisplayOutlinedIcon />
     },
     {
@@ -149,29 +149,18 @@ const MyProSidebar = () => {
     if(window.innerWidth<500 && !collapsed){
       setMobileView(true)
       document.body.style.overflowX="hidden"
-      // document.getElementById("rightBody").style.marginLeft="-250px"
-      // document.getElementById("rightBody").style.position="absolute "
-      // document.getElementById("rightBody").style.left= "90px"
-      
       document.getElementById("myProSidebar").style.backdropFilter="blur(20px)"
-
     }
     else if(window.innerWidth<768 && !collapsed){
       document.body.style.overflowX="hidden"
       document.getElementById("rightBody").style.marginLeft="-155px"
-      // document.getElementById("rightBody").style.position="absolute "
-      // document.getElementById("rightBody").style.left= "90px"
       document.getElementById("myProSidebar").style.backdropFilter="blur(20px)"
     }
     else if(window.innerWidth<768 && collapsed){
       document.getElementById("rightBody").style.marginLeft="0px"
     }
   },[collapsed])
-  // window.addEventListener("resize",()=>{
-  //   if(window.innerWidth<768){
-  //     collapseSidebar()
-  //   }
-  // })
+
   return (
     <Box
       sx={[{
@@ -185,7 +174,6 @@ const MyProSidebar = () => {
         "& .sidebar": {
           border: "none",
           background:  (!mobileView || !collapsed) ? "linear-gradient(168deg, rgba(46, 51, 90, 0.50) 1.62%, rgba(28, 27, 51, 0.50) 95.72%)" : "",
-          // boxShadow:  (!mobileView || !collapsed) ? "inset -50px -10px 60px -40px rgba(59, 38, 123, 0.70)" : ""
         },
         "& .menu-icon": {
           backgroundColor: "transparent !important",
