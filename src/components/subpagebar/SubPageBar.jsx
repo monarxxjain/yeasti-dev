@@ -4,31 +4,45 @@ import { useProSidebar } from "react-pro-sidebar";
 
 import { useSubPageBarContext } from "./MySubPageBarContext"; 
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { tokens } from "../../theme";
 import { useTheme, Box, Typography, IconButton } from "@mui/material";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import SlideshowIcon from '@mui/icons-material/Slideshow';
-import SmartDisplayOutlinedIcon from '@mui/icons-material/SmartDisplayOutlined';
-import MusicVideoIcon from '@mui/icons-material/MusicVideo';
-import SubscriptionsOutlinedIcon from '@mui/icons-material/SubscriptionsOutlined';
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
-  const colors = tokens(theme.palette.mode)
+  const colors = tokens(theme.palette.mode);
+  const location = useLocation();
+  const [pathName, setPathName] = useState  (null);
+
+  // Check if this item is currently selected based on the 'selected' prop
+  const isActive = selected === title;
+
+  // Determine whether to apply the 'glowing-semicircle' class
+  const className = isActive ? 'glowing-semicircle' : '';
+  
+
+  useEffect(() => {
+    if(pathName===null){
+      setSelected("Overview")
+    }
+    setPathName(location.pathname);
+  }, [pathName]);
 
   return (
     <MenuItem
-      active={selected === title}
-      
-      onClick={() => setSelected(title)}
+      active={isActive} // Set active based on whether this item is selected
+      className={className}
+      onClick={() => {
+        setSelected(title);
+        setPathName(location.pathname);
+      }}
       icon={icon}
       routerLink={<Link to={to} />}
     >
-        
-        <Typography style={{fontSize: "17px", fontWeight: "590"}}>{title}</Typography>
+      <Typography style={{ fontSize: "17px", fontWeight: "590", textAlign: "center" }}>{title}</Typography>
     </MenuItem>
   );
 };
+
 
 const SubPageBar = ({subPages}) => {
   const theme = useTheme();
@@ -55,11 +69,6 @@ const SubPageBar = ({subPages}) => {
       const calcValue = window.innerWidth - 100
       setDashWidth(calcValue)
       document.getElementById("rightBody").style.width=`${calcValue}px`
-      // document.body.style.overflowX="hidden"
-      // document.getElementById("rightBody").style.position="absolute "
-      // document.getElementById("rightBody").style.left= "90px"
-      // document.getElementById("myProSidebar").style.backdropFilter="blur(20px)"
-      // document.getElementById("MuiBox-root").style.left= "90px"
     }
   }
   useEffect(()=>{
@@ -70,12 +79,13 @@ const SubPageBar = ({subPages}) => {
     <Box
       sx={{
         display: "flex",
+        height: "50px",
+        overflowY: "hidden",
         zIndex: 10000,
         "& .sidebar": {
-        //   width: "70%",
           border: "none",
           background: "linear-gradient(270deg, #27294A 0%, rgba(42, 46, 80, 0.00) 89.84%)",
-          boxShadow: "inset -50px -10px 60px -40px rgba(59, 38, 123, 0.70)",
+          boxShadow: "inset -10px -50px 60px -40px rgba(59, 38, 123, 0.70)",
         },
         "& .menu-icon": {
           backgroundColor: "transparent !important",
@@ -97,12 +107,11 @@ const SubPageBar = ({subPages}) => {
     >
       <Sidebar
         backgroundColor={"background: linear-gradient(168deg, rgba(46, 51, 90, 0.50) 1.62%, rgba(28, 27, 51, 0.50) 95.72%)"}
-        // className="lg:!w-[75vmax] xl:!w-[80.2vmax] 2xl:!w-[83vw]"
-        // className="!w-full"
+        className="!overflow-y-hidden"        
         width={`${dashWidth}px`}
       >
-        <Menu iconshape="square">
-          <Box marginX={!collapsed ? "16px" : undefined} display={"flex"} overflow={"scroll"}>
+        <Menu iconshape="square" className="!overflow-y-hidden">
+          <Box marginX={!collapsed ? "16px" : undefined} display={"flex"} overflow={"scroll"} className="!overflow-y-hidden">
             {pages.map((page, id)=>{
               return <Item 
                 key={id}

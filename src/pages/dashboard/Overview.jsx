@@ -118,7 +118,6 @@ import {
   
         <Grid container rowSpacing={"60px"} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
 
-          
           <Grid xs={12} sm={12} md={6} lg={4} xl={4}>
             <Box
                 width="100%"
@@ -131,12 +130,6 @@ import {
             >
               <LineChart/>
               <div className="!z-10" style={{background: "linear-gradient(180deg, rgba(72, 49, 157, 0.20) 0%, rgba(72, 49, 157, 0.00) 100%)"}}>
-                
-                {/* <div style={{display: "flex", justifyContent: "space-around", borderBottom: "1px solid #333045",paddingTop:"14px", paddingBottom: "14px", margin: "-60px 5px 10px", color: "grey"}}>
-                  <div className="hover:text-white cursor-pointer z-10">Daily</div>
-                  <div className="hover:text-white cursor-pointer z-10">Weekly</div>
-                  <div className="hover:text-white cursor-pointer z-10">Monthly</div>
-                </div> */}
 
                 <div className="px-8 xxs:px-16 py-[40px] mt-[-61px]">
                   <div className="" style={{color: "grey"}}>Revenue</div>
@@ -212,10 +205,7 @@ import {
               </div>
             </Box>
           </Grid>
-
           
-          
-
           <Grid xs={12} sm={12} md={6} lg={4} xl={4}>
             <Box
                 width="100%"
@@ -348,168 +338,6 @@ import {
             </Box>
           </Grid>
         
-                 
-          
-{/*   
-          <Grid
-            xs={12}
-            sm={12}
-            md={8}
-            lg={8}
-            container
-            rowSpacing={1}
-            columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-          >
-            <Grid xs={12}>
-              <Box backgroundColor={colors.primary[400]}>
-                <Box
-                  mt="25px"
-                  p="0 30px"
-                  display="flex"
-                  justifyContent="space-between"
-                  alignItems="center"
-                >
-                  <Box>
-                    <Typography
-                      variant="h5"
-                      fontWeight="600"
-                      color={colors.grey[100]}
-                    >
-                      Revenue Generated
-                    </Typography>
-                    <Typography
-                      variant="h5"
-                      fontWeight="600"
-                      color={colors.greenAccent[500]}
-                    >
-                      $58,373,698
-                    </Typography>
-                  </Box>
-                  <Box>
-                    <IconButton>
-                      <DownloadOutlinedIcon
-                        sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
-                      />
-                    </IconButton>
-                  </Box>
-                </Box>
-                <Box height="250px" m="-20px 0 0 0">
-                  <LineChart isDashboard={true} />
-                </Box>
-              </Box>
-            </Grid>
-            <Grid xs={12} sm={12} md={6}>
-              <Box backgroundColor={colors.primary[400]} p="30px">
-                <Typography variant="h5" fontWeight="600">
-                  Campaign
-                </Typography>
-                <Box
-                  display="flex"
-                  flexDirection="column"
-                  alignItems="center"
-                  mt="25px"
-                >
-                  <ProgressCircle size="125" />
-                  <Typography
-                    variant="h5"
-                    color={colors.greenAccent[500]}
-                    sx={{ mt: "15px" }}
-                  >
-                    $48,352 revenue generated
-                  </Typography>
-                  <Typography>
-                    Includes extra misc expenditures and costs
-                  </Typography>
-                </Box>
-              </Box>
-            </Grid>
-            <Grid xs={12} sm={12} md={6}>
-              <Box backgroundColor={colors.primary[400]}>
-                <Typography
-                  variant="h5"
-                  fontWeight="600"
-                  sx={{ padding: "30px 30px 0 30px" }}
-                >
-                  Sales Quantity
-                </Typography>
-                <Box height="250px" mt="-20px">
-                  <BarChart isDashboard={true} />
-                </Box>
-              </Box>
-            </Grid>
-            <Grid xs={12}>
-              <Box backgroundColor={colors.primary[400]} padding="30px">
-                <Typography
-                  variant="h5"
-                  fontWeight="600"
-                  sx={{ marginBottom: "15px" }}
-                >
-                  Geography Based Traffic
-                </Typography>
-                <Box height="200px">
-                  <GeographyChart isDashboard={true} />
-                </Box>
-              </Box>
-            </Grid>
-          </Grid>
-          <Grid xs={12} sm={12} md={4} lg={4} xl={4}>
-            <Box
-              backgroundColor={colors.primary[400]}
-              maxHeight="100vh"
-              overflow="auto"
-              m="25px 0 0 0"
-            >
-              <Box
-                display="flex"
-                justifyContent="space-between"
-                alignItems="center"
-                borderBottom={`4px solid ${colors.primary[500]}`}
-                color={colors.grey[100]}
-                p="15px"
-              >
-                <Typography
-                  variant="h5"
-                  fontWeight="600"
-                  color={colors.grey[100]}
-                >
-                  Resent Transaction
-                </Typography>
-              </Box>
-              {mockTransactions.map((transaction, i) => {
-                return (
-                  <Box
-                    key={`${transaction}-${i}`}
-                    display="flex"
-                    justifyContent="space-between"
-                    alignItems="center"
-                    borderBottom={`4px solid ${colors.primary[500]}`}
-                    p="15px"
-                  >
-                    <Box>
-                      <Typography
-                        variant="h5"
-                        fontWeight="600"
-                        color={colors.greenAccent[100]}
-                      >
-                        {transaction.txId}
-                      </Typography>
-                      <Typography color={colors.grey[100]}>
-                        {transaction.user}
-                      </Typography>
-                    </Box>
-                    <Box color={colors.grey[100]}>{transaction.date}</Box>
-                    <Box
-                      color={colors.greenAccent[500]}
-                      p="5px 10px"
-                      borderRadius="4px"
-                    >
-                      ${transaction.cost}
-                    </Box>
-                  </Box>
-                );
-              })}
-            </Box>
-          </Grid> */}
         </Grid>
       </Box>
     );

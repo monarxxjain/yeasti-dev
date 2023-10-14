@@ -185,17 +185,13 @@ const MyProSidebar = () => {
         "& .sidebar": {
           border: "none",
           background:  (!mobileView || !collapsed) ? "linear-gradient(168deg, rgba(46, 51, 90, 0.50) 1.62%, rgba(28, 27, 51, 0.50) 95.72%)" : "",
-          boxShadow:  (!mobileView || !collapsed) ? "inset -50px -10px 60px -40px rgba(59, 38, 123, 0.70)" : ""
+          // boxShadow:  (!mobileView || !collapsed) ? "inset -50px -10px 60px -40px rgba(59, 38, 123, 0.70)" : ""
         },
         "& .menu-icon": {
           backgroundColor: "transparent !important",
         },
         "& .menu-item": {
-          // padding: "5px 35px 5px 20px !important",
           backgroundColor: "transparent !important",
-          // backgroundImage: "linear-gradient(to right, transparent, #f0f0f0, transparent)",
-          // backgroundOrigin: "border-box",
-          // backgroundClip: "content-box"
         },
         "& .menu-anchor": {
           color: "inherit !important",
@@ -211,7 +207,6 @@ const MyProSidebar = () => {
         },
       }, collapsed ? {
         "& .sidebar": {
-          // border: "1px solid white",
           borderRadius: "15px !important",
           margin: "5px"
         },
@@ -242,7 +237,7 @@ const MyProSidebar = () => {
                 display="flex"
                 justifyContent="space-between"
                 alignItems="center"
-                // ml="7px"
+                style={{marginLeft: (!mobileView || !collapsed) ? "7px" : ""}}
               >
                 <MenuOutlinedIcon onClick={() => collapseSidebar()} />
               </Box>

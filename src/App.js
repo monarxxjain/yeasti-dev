@@ -28,18 +28,13 @@ import DashboardCustomerInteractions from "./pages/dashboard/CustomerInteraction
 const App = () => {
   const [theme, colorMode] = useMode();
   const dashboardSubPages = [
-    {title: "Overview", to: "/dashboard"},
+    {title: "Overview", to: "/dashboard/overview"},
     {title: "Operational Snapshot", to: "/dashboard/operational-snapshot"},
     {title: "Sales Insights", to: "/dashboard/sales-insights"},
     {title: "Customer Interactions", to: "/dashboard/customer-interactions"},
     {title: "Employee Productivity", to: "/dashboard/employee-productivity"},
     {title: "Marketing", to: "/dashboard/marketing"},
-    {title: "Supply Chain", to: "/dashboard/supply-chain"},
-    {title: "Overview", to: "/dashboard/overview"},
-    {title: "Overview", to: "/dashboard/overview"},
-    {title: "Overview", to: "/dashboard/overview"},
-    {title: "Overview", to: "/dashboard/overview"},
-    {title: "Overview", to: "/dashboard/overview"},
+    {title: "Supply Chain", to: "/dashboard/supply-chain"}
   ]
   window.addEventListener("orientationchange", ()=>{
     window.location.reload()
@@ -55,8 +50,8 @@ const App = () => {
               <MySubPageSidebarProvider subPages={dashboardSubPages}>
                 <Routes>
                   {/* Dashboard Paths */}
-                  <Route path="/" element={<Navigate to="/dashboard"/>}/>
-                  <Route path="/dashboard" element={<><DashboardOverview/></>} />
+                  <Route path="/" element={<Navigate to="/dashboard/overview"/>}/>
+                  <Route path="/dashboard/overview" element={<><DashboardOverview/></>} />
                   <Route path="/dashboard/operational-snapshot" element={<><DashboardOperationalSnapshot/></>} />
                   <Route path="/dashboard/sales-insights" element={<><DashboardSalesInsights/></>} />
                   <Route path="/dashboard/marketing" element={<><DashboardMarketing/></>} />
