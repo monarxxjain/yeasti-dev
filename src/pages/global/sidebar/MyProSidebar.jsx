@@ -67,6 +67,7 @@ const MyProSidebar = () => {
   const { sidebarRTL, setSidebarRTL, sidebarImage } = useSidebarContext();
   const { collapseSidebar, toggleSidebar, collapsed, broken } = useProSidebar();
   const [mobileView, setMobileView] = useState(false)
+  const [initalHide, setInitialHide] = useState(false)
   const pages = [
     {
       title: "Dashboard",
@@ -140,11 +141,11 @@ const MyProSidebar = () => {
     },
 
   ]
-  useEffect(()=>{
-    if(window.innerWidth<768){
-      collapseSidebar()
-    }
-  },[])
+  // useEffect(()=>{
+  //   if(window.innerWidth<768){
+  //     collapseSidebar()
+  //   }
+  // },[])
   useEffect(()=>{
     if(window.innerWidth<500 && !collapsed){
       setMobileView(true)
@@ -201,6 +202,7 @@ const MyProSidebar = () => {
       } : {}]}
     >
       <Sidebar id="myProSidebar"
+        defaultCollapsed={mobileView ? true : false}
         rtl={sidebarRTL}
         backgroundColor={"background: linear-gradient(168deg, rgba(46, 51, 90, 0.50) 1.62%, rgba(28, 27, 51, 0.50) 95.72%)"}
         image={sidebarImage}
