@@ -150,7 +150,8 @@ const MyProSidebar = () => {
     <Box
       sx={[{
         position: (!mobileView || !collapsed) ? "sticky" : "absolute xxs:!sticky",
-        display: (!mobileView && initalHide) ? "none" : "flex",
+        display: "flex",
+        visibility: (!mobileView && initalHide) ? "hidden" : "visible",
         height: (!mobileView || !collapsed) ? "100vh" : "min-content",
         top: 0,
         width: mobileView ? "1px" : "min-content",
