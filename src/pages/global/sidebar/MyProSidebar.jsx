@@ -144,13 +144,13 @@ const MyProSidebar = () => {
   },[collapsed])
   setTimeout(() => {
     setInitialHide(false)
-  }, 400);
+  }, 40);
 
   return (
     <Box
       sx={[{
         position: (!mobileView || !collapsed) ? "sticky" : "absolute xxs:!sticky",
-        display: initalHide ? "none" : "flex",
+        display: (!mobileView && initalHide) ? "none" : "flex",
         height: (!mobileView || !collapsed) ? "100vh" : "min-content",
         top: 0,
         width: mobileView ? "1px" : "min-content",
