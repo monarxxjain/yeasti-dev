@@ -9,25 +9,11 @@ import { Link } from "react-router-dom";
 import { tokens } from "../../../theme";
 import { useTheme, Box, Typography, IconButton, collapseClasses } from "@mui/material";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
-import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
-import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
-import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
-import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import SlideshowIcon from '@mui/icons-material/Slideshow';
 import SmartDisplayOutlinedIcon from '@mui/icons-material/SmartDisplayOutlined';
 import MusicVideoIcon from '@mui/icons-material/MusicVideo';
 import SubscriptionsOutlinedIcon from '@mui/icons-material/SubscriptionsOutlined';
-import RestoreOutlinedIcon from '@mui/icons-material/RestoreOutlined';
-import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
-import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import SwitchRightOutlinedIcon from "@mui/icons-material/SwitchRightOutlined";
-import SwitchLeftOutlinedIcon from "@mui/icons-material/SwitchLeftOutlined";
 import MacButtonsIcon from "../../../assets/sidebar/MacButtonsIcon";
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -67,7 +53,7 @@ const MyProSidebar = () => {
   const { sidebarRTL, setSidebarRTL, sidebarImage } = useSidebarContext();
   const { collapseSidebar, toggleSidebar, collapsed, broken } = useProSidebar();
   const [mobileView, setMobileView] = useState(false)
-  const [initalHide, setInitialHide] = useState(false)
+  const [initalHide, setInitialHide] = useState(true)
   const pages = [
     {
       title: "Dashboard",
@@ -141,11 +127,6 @@ const MyProSidebar = () => {
     },
 
   ]
-  // useEffect(()=>{
-  //   if(window.innerWidth<768){
-  //     collapseSidebar()
-  //   }
-  // },[])
   useEffect(()=>{
     if(window.innerWidth<500 && !collapsed){
       setMobileView(true)
@@ -161,12 +142,15 @@ const MyProSidebar = () => {
       document.getElementById("rightBody").style.marginLeft="0px"
     }
   },[collapsed])
+  setTimeout(() => {
+    setInitialHide(false)
+  }, 400);
 
   return (
     <Box
       sx={[{
         position: (!mobileView || !collapsed) ? "sticky" : "absolute xxs:!sticky",
-        display: "flex",
+        display: initalHide ? "none" : "flex",
         height: (!mobileView || !collapsed) ? "100vh" : "min-content",
         top: 0,
         width: mobileView ? "1px" : "min-content",
