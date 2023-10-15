@@ -7,7 +7,7 @@ import { useSidebarContext } from "./sidebarContext";
 
 import { Link } from "react-router-dom";
 import { tokens } from "../../../theme";
-import { useTheme, Box, Typography, IconButton, collapseClasses } from "@mui/material";
+import { useTheme, Box, Typography } from "@mui/material";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import SlideshowIcon from '@mui/icons-material/Slideshow';
 import SmartDisplayOutlinedIcon from '@mui/icons-material/SmartDisplayOutlined';
@@ -50,8 +50,8 @@ const MyProSidebar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [selected, setSelected] = useState("Dashboard");
-  const { sidebarRTL, setSidebarRTL, sidebarImage } = useSidebarContext();
-  const { collapseSidebar, toggleSidebar, collapsed, broken } = useProSidebar();
+  const { sidebarRTL,  sidebarImage } = useSidebarContext();
+  const { collapseSidebar, collapsed } = useProSidebar();
   const [mobileView, setMobileView] = useState(false)
   const [initalHide, setInitialHide] = useState(true)
   const pages = [

@@ -2,14 +2,12 @@ import { useEffect, useState } from "react";
 import { Menu, Sidebar, MenuItem } from "react-pro-sidebar";
 import { useProSidebar } from "react-pro-sidebar";
 
-import { useSubPageBarContext } from "./MySubPageBarContext"; 
 
 import { Link, useLocation } from "react-router-dom";
-import { tokens } from "../../theme";
-import { useTheme, Box, Typography, IconButton } from "@mui/material";
+import {  Box, Typography } from "@mui/material";
 const Item = ({ title, to, icon, selected, setSelected }) => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+  // const theme = useTheme();
+  // const colors = tokens(theme.palette.mode);
   const location = useLocation();
   const [pathName, setPathName] = useState  (null);
 
@@ -25,6 +23,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
       setSelected("Overview")
     }
     setPathName(location.pathname);
+    // eslint-disable-next-line
   }, [pathName]);
 
   return (
@@ -45,11 +44,11 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 
 
 const SubPageBar = ({subPages}) => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+  // const theme = useTheme();
+  // const colors = tokens(theme.palette.mode);
   const [selected, setSelected] = useState("Dashboard");
-  const { sidebarRTL, setSidebarRTL, sidebarImage } = useSubPageBarContext();
-  const { collapseSidebar, toggleSidebar, collapsed, broken } = useProSidebar();
+  // const { sidebarRTL, setSidebarRTL, sidebarImage } = useSubPageBarContext();
+  const { collapsed } = useProSidebar();
   const pages = subPages;
   const [dashWidth, setDashWidth] = useState((window.innerWidth-260))
   window.addEventListener("resize",()=>{
@@ -73,7 +72,7 @@ const SubPageBar = ({subPages}) => {
   }
   useEffect(()=>{
     subPageBarWidth()
-
+// eslint-disable-next-line
   },[])
   return (
     <Box

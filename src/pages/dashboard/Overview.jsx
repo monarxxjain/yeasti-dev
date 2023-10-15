@@ -1,13 +1,8 @@
 import {
     Box,
-    Button,
     IconButton,
-    Typography,
-    useTheme,
-    useMediaQuery,
   } from "@mui/material";
   import Grid from "@mui/material/Unstable_Grid2";
-  import { tokens } from "../../theme";
   import LineChart from "../../components/echarts/LineChart";
   import Card6Image from '../../assets/dashboardOverview/Card6Person.svg'
   import Card6Profile from '../../assets/dashboardOverview/Card6Profile.svg'
@@ -23,11 +18,10 @@ import {
   import Arrow from "../../assets/dashboardOverview/Arrow";
   import PieChart from "../../components/echarts/PieChart";
   import BarChart from "../../components/echarts/BarChart";
-  import { useEffect } from "react";
   const DashboardOverview = () => {
-    const theme = useTheme();
-    const smScreen = useMediaQuery(theme.breakpoints.up("sm"));
-    const colors = tokens(theme.palette.mode);
+    // const theme = useTheme();
+    // const smScreen = useMediaQuery(theme.breakpoints.up("sm"));
+    // const colors = tokens(theme.palette.mode);
     const chats = [
       {
         name: "Jane Cooper",
@@ -270,7 +264,7 @@ import {
                         <div className="flex justify-between gap-3 items-center bg-[#2F3134] rounded-xl cursor-pointer py-1 hover:bg-[#4F5153] transition-all group-hover:translate-x-[-70px]">
                           <div className="flex gap-3 ">
                             <div className="relative">
-                              <img src={chat.profileAvatar} className="rounded-full"/>
+                              <img src={chat.profileAvatar} alt="onlineStatus" className="rounded-full"/>
                               {chat.onlineStatus==="yellow" && <div className="absolute rounded-full bottom-0 right-0 w-3.5 h-3.5 bg-[#EEE84E] border-[3px] border-[#2F3134]"></div>}
                               {chat.onlineStatus==="green" && <div className="absolute rounded-full bottom-0 right-0 w-3.5 h-3.5 bg-[#65D60D] border-[3px] border-[#2F3134]"></div>}
                               {chat.onlineStatus==="red" && <div className="absolute rounded-full bottom-0 right-0 w-3.5 h-3.5 bg-[#D60D3D] border-[3px] border-[#2F3134]"></div>}
@@ -289,7 +283,7 @@ import {
                         <div className="absolute top-0 z-[-1] rounded-xl flex justify-between items-center h-full px-6 w-full" style={{background: "rgba(255, 37, 37, 0.15)"}}>
                           <p>Hidden</p>
                           <IconButton>
-                            <img className="cursor-pointer !z-10" src={DeleteIcon}/>
+                            <img className="cursor-pointer !z-10" alt="delIcon" src={DeleteIcon}/>
                           </IconButton>
                         </div>
                       </div>
@@ -310,12 +304,12 @@ import {
                 borderBottom={0}
                 className="hover:scale-x-105 hover:scale-y-110 transition-all relative max-h-[370px] h-full"
             >
-              <img src={Card6Image} className="rounded-lg w-full max-h-[370px] object-cover" />
+              <img src={Card6Image} alt="cardImage" className="rounded-lg w-full max-h-[370px] object-cover" />
               <div className="w-full px-4 absolute bottom-0">
                 <div className="p-4 rounded-3xl flex flex-col gap-[10px] " style={{background: "rgba(0, 0, 0, 0.42)", backdropFilter: "blur(9.5px)"}}>
                   <div className="flex justify-between items-center w-full">
                     <div className="flex gap-4 items-center">
-                      <img src={Card6Profile} />
+                      <img alt="profileImage" src={Card6Profile} />
                       <div className="text-[18px] font-bold leading-7">
                         Jhon
                       </div>

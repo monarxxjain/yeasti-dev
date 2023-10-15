@@ -2,14 +2,6 @@ import EChartsReact from 'echarts-for-react';
 import React from 'react';
 
 const RapidLine = () => {
-    const data = [
-        ['2021-01-01', 90],
-        ['2021-01-02', 110],
-        ['2021-01-03', 80],
-        ['2021-01-04', 130],
-        ['2021-01-05', 95],
-        // Add more data points as needed
-      ];
       
   return (
     <EChartsReact

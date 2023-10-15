@@ -25,15 +25,15 @@ const App = () => {
     {title: "Marketing", to: "/dashboard/marketing"},
     {title: "Supply Chain", to: "/dashboard/supply-chain"}
   ]
-  const personalSubPages = [
-    {title: "PersonalSub1", to: "/personal/sub1"},
-    {title: "PersonalSub2", to: "/personal/sub2"},
-    {title: "PersonalSub3", to: "/personal/sub3"},
-    {title: "PersonalSub4", to: "/personal/sub4"},
-    {title: "PersonalSub5", to: "/personal/sub5"},
-    {title: "PersonalSub6", to: "/personal/sub6"},
-    {title: "PersonalSub7", to: "/personal/sub7"}
-  ]
+  // const personalSubPages = [
+  //   {title: "PersonalSub1", to: "/personal/sub1"},
+  //   {title: "PersonalSub2", to: "/personal/sub2"},
+  //   {title: "PersonalSub3", to: "/personal/sub3"},
+  //   {title: "PersonalSub4", to: "/personal/sub4"},
+  //   {title: "PersonalSub5", to: "/personal/sub5"},
+  //   {title: "PersonalSub6", to: "/personal/sub6"}, 
+  //   {title: "PersonalSub7", to: "/personal/sub7"}
+  // ]
   window.addEventListener("orientationchange", ()=>{
     window.location.reload()
   })
