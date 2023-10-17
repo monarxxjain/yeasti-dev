@@ -24,7 +24,7 @@ const Item = ({ title, to, icon, selected, setSelected, setSelectedTab }) => {
       active={selected === title}
       style={{
         color: colors.grey[100], borderBottom: "1px solid transparent",
-        borderImage: selected === title ? "linear-gradient(to right, transparent, rgba(196, 39, 251, 0.3), transparent)" : "linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent)",
+        borderImage:  "linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent)",
         borderImageSlice: 1,
         borderTop: selected === title ? "1px solid transparent" : "none",
         position: "relative"

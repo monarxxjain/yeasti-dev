@@ -67,6 +67,7 @@ const App = () => {
         break;
     
       default:
+        setSubPages(dashboardSubPages)
         break;
     }
   },[selectedTab])

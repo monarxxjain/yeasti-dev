@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
 import { Menu, Sidebar, MenuItem } from "react-pro-sidebar";
 import { useProSidebar } from "react-pro-sidebar";
-
-
 import { Link, useLocation } from "react-router-dom";
 import {  Box, Typography } from "@mui/material";
+
 const Item = ({ title, to, icon, selected, setSelected }) => {
-  // const theme = useTheme();
-  // const colors = tokens(theme.palette.mode);
   const location = useLocation();
   const [pathName, setPathName] = useState  (null);
 
@@ -42,18 +39,16 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
   );
 };
 
-
 const SubPageBar = ({subPages}) => {
-  // const theme = useTheme();
-  // const colors = tokens(theme.palette.mode);
   const [selected, setSelected] = useState("Dashboard");
-  // const { sidebarRTL, setSidebarRTL, sidebarImage } = useSubPageBarContext();
   const { collapsed } = useProSidebar();
   const pages = subPages;
-  const [dashWidth, setDashWidth] = useState((window.innerWidth-260))
+  const [dashWidth, setDashWidth] = useState((window.innerWidth-260));
+
   window.addEventListener("resize",()=>{
     subPageBarWidth()
-  })
+  });
+
   function subPageBarWidth(){
     if(window.innerWidth>=768 && !collapsed){
       const calcValue = window.innerWidth - 260
@@ -70,9 +65,10 @@ const SubPageBar = ({subPages}) => {
       document.getElementById("rightBody").style.width=`${calcValue}px`
     }
   }
+  
   useEffect(()=>{
     subPageBarWidth()
-// eslint-disable-next-line
+  // eslint-disable-next-line
   },[])
   return (
     <Box
