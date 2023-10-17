@@ -4,7 +4,7 @@ import MyProSidebar from "./MyProSidebar";
 
 const SidebarContext = createContext({});
 
-export const MyProSidebarProvider = ({ children }) => {
+export const MyProSidebarProvider = ({ children, setSelectedTab }) => {
   const [sidebarRTL, setSidebarRTL] = useState(false);
   const [sidebarBackgroundColor, setSidebarBackgroundColor] =
     useState(undefined);
@@ -29,7 +29,7 @@ export const MyProSidebarProvider = ({ children }) => {
             flexDirection: sidebarRTL ? "row-reverse" : "row",
           }}
         >
-          <MyProSidebar />
+          <MyProSidebar setSelectedTab={setSelectedTab}/>
           {children}
         </div>
       </SidebarContext.Provider>
