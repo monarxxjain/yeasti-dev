@@ -18,7 +18,7 @@ import Area3 from "../../assets/dashboardOverview/Area3";
 import Arrow from "../../assets/dashboardOverview/Arrow";
 import PieChart from "../../components/echarts/PieChart";
 import BarChart from "../../components/echarts/BarChart";
-const PersonalSub1 = () => {
+const PersonalOverview = () => {
   const chats = [
     {
       name: "Jane Cooper",
@@ -334,4 +334,4 @@ const PersonalSub1 = () => {
   );
 };
 
-export default PersonalSub1;
+export default PersonalOverview;

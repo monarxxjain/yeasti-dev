@@ -64,67 +64,67 @@ const MyProSidebar = ({setSelectedTab}) => {
     },
     {
       title: "Personal",
-      to: "/personal/sub1",
+      to: "/personal/overview",
       icon: <SmartDisplayOutlinedIcon />
     },
     {
       title: "inventory",
-      to: "/",
+      to: "/inventory/overview",
       icon: <SubscriptionsOutlinedIcon />
     },
     {
       title: "Sales",
-      to: "/",
+      to: "/sales/overview",
       icon: <MusicVideoIcon />
     },
     {
       title: "Orders",
-      to: "/",
+      to: "/orders/overview",
       icon: <SlideshowIcon />
     },
     {
       title: "Reports",
-      to: "/",
+      to: "/reports/overview",
       icon: <SlideshowIcon />
     },
     {
       title: "Administration",
-      to: "/",
+      to: "/administration/add-new-user",
       icon: <SlideshowIcon />
     },
     {
       title: "Yeasti Ai",
-      to: "/",
+      to: "/yeasti/ask-yeasti",
       icon: <SlideshowIcon />
     },
     {
       title: "Customers",
-      to: "/",
+      to: "/customers/customer-list",
       icon: <SlideshowIcon />
     },
     {
       title: "Suppliers",
-      to: "/",
+      to: "/suppliers/suppliers-list",
       icon: <SlideshowIcon />
     },
     {
       title: "Logistics",
-      to: "/",
+      to: "/logistics/transportation-management",
       icon: <SlideshowIcon />
     },
     {
       title: "Marketing",
-      to: "/",
+      to: "/marketing/campaign-management",
       icon: <SlideshowIcon />
     },
     {
       title: "Financials",
-      to: "/",
+      to: "/financials/budget-management",
       icon: <SlideshowIcon />
     },
     {
       title: "Compliance",
-      to: "/",
+      to: "/compliance/licensing-and-permits",
       icon: <SlideshowIcon />
     },
 

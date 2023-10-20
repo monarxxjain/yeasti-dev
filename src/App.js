@@ -18,14 +18,15 @@ import DashboardCustomerInteractions from "./pages/dashboard/CustomerInteraction
 import DashboardFinancials from "./pages/dashboard/Financials";
 import DashboardOthers from "./pages/dashboard/Others";
 
-import PersonalSub1 from "./pages/personal/PersonalSub1";
-import PersonalSub2 from "./pages/personal/PersonalSub2";
-import PersonalSub3 from "./pages/personal/PersonalSub3";
-import PersonalSub4 from "./pages/personal/PersonalSub4";
-import PersonalSub5 from "./pages/personal/PersonalSub5";
-import PersonalSub6 from "./pages/personal/PersonalSub6";
-import PersonalSub7 from "./pages/personal/PersonalSub7";
-// import { MyUserMenuProvider } from "./pages/global/userMenu/userMenuContext";
+import PersonalOverview from "./pages/personal/Overview";
+import PersonalPerformance from "./pages/personal/Performance";
+import PersonalCommunications from "./pages/personal/Communications";
+import PersonalSchedule from "./pages/personal/Schedule";
+import PersonalTasks from "./pages/personal/Tasks";
+import PersonalTraining from "./pages/personal/Training";
+import PersonalOther from "./pages/personal/Other";
+
+import InventoryOverview from "./pages/inventory/Overview";
 
 const App = () => {
   const [theme, colorMode] = useMode();
@@ -41,13 +42,13 @@ const App = () => {
     {title: "Others", to: "/dashboard/others"}
   ]
   const personalSubPages = [
-    {title: "PersonalSub1", to: "/personal/sub1"},
-    {title: "PersonalSub2", to: "/personal/sub2"},
-    {title: "PersonalSub3", to: "/personal/sub3"},
-    {title: "PersonalSub4", to: "/personal/sub4"},
-    {title: "PersonalSub5", to: "/personal/sub5"},
-    {title: "PersonalSub6", to: "/personal/sub6"}, 
-    {title: "PersonalSub7", to: "/personal/sub7"}
+    {title: "Overview", to: "/personal/overview"},
+    {title: "Performance", to: "/personal/performance"},
+    {title: "Communications", to: "/personal/communications"},
+    {title: "Schedule", to: "/personal/schedule"},
+    {title: "Tasks", to: "/personal/tasks"},
+    {title: "Training", to: "/personal/training"}, 
+    {title: "Others", to: "/personal/others"}
   ]
   window.addEventListener("orientationchange", ()=>{
     window.location.reload()
@@ -86,25 +87,27 @@ const App = () => {
 
                     {/* Dashboard Paths */}
                     <Route path="/" element={<Navigate to="/dashboard/overview"/>}/>
-                    <Route path="/dashboard/overview" element={<><DashboardOverview/></>} />
-                    <Route path="/dashboard/operational-snapshot" element={<><DashboardOperationalSnapshot/></>} />
-                    <Route path="/dashboard/sales-insights" element={<><DashboardSalesInsights/></>} />
-                    <Route path="/dashboard/marketing" element={<><DashboardMarketing/></>} />
-                    <Route path="/dashboard/supply-chain" element={<><DashboardSupplyChain/></>} />
-                    <Route path="/dashboard/employee-productivity" element={<><DashboardEmployeeProductivity/></>} />
-                    <Route path="/dashboard/customer-interactions" element={<><DashboardCustomerInteractions/></>} />
-                    <Route path="/dashboard/financials" element={<><DashboardFinancials/></>} />
-                    <Route path="/dashboard/others" element={<><DashboardOthers/></>} />
+                    <Route path="/dashboard/overview" element={<DashboardOverview/>} />
+                    <Route path="/dashboard/operational-snapshot" element={<DashboardOperationalSnapshot/>} />
+                    <Route path="/dashboard/sales-insights" element={<DashboardSalesInsights/>} />
+                    <Route path="/dashboard/marketing" element={<DashboardMarketing/>} />
+                    <Route path="/dashboard/supply-chain" element={<DashboardSupplyChain/>} />
+                    <Route path="/dashboard/employee-productivity" element={<DashboardEmployeeProductivity/>} />
+                    <Route path="/dashboard/customer-interactions" element={<DashboardCustomerInteractions/>} />
+                    <Route path="/dashboard/financials" element={<DashboardFinancials/>} />
+                    <Route path="/dashboard/others" element={<DashboardOthers/>} />
 
                     {/* Personal Paths */}
-                    <Route path="/personal/sub1" element={<><PersonalSub1/></>} />
-                    <Route path="/personal/sub2" element={<><PersonalSub2/></>} />
-                    <Route path="/personal/sub3" element={<><PersonalSub3/></>} />
-                    <Route path="/personal/sub4" element={<><PersonalSub4/></>} />
-                    <Route path="/personal/sub5" element={<><PersonalSub5/></>} />
-                    <Route path="/personal/sub6" element={<><PersonalSub6/></>} />
-                    <Route path="/personal/sub7" element={<><PersonalSub7/></>} />
+                    <Route path="/personal/overview" element={<PersonalOverview/>} />
+                    <Route path="/personal/performance" element={<PersonalPerformance/>} />
+                    <Route path="/personal/communications" element={<PersonalCommunications/>} />
+                    <Route path="/personal/schedule" element={<PersonalSchedule/>} />
+                    <Route path="/personal/tasks" element={<PersonalTasks/>} />
+                    <Route path="/personal/training" element={<PersonalTraining/>} />
+                    <Route path="/personal/others" element={<PersonalOther/>} />
 
+                    <Route path="/inventory/overview" element={<InventoryOverview />} />
+                    
                     
                   </Routes>
                 </MySubPageSidebarProvider>

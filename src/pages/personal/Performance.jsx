@@ -18,7 +18,7 @@ import {
   import Arrow from "../../assets/dashboardOverview/Arrow";
   import CandleStickChart from "../../components/echarts/CandleStickChart";
   import PictorialBarChart from "../../components/echarts/PictorialBarChart";
-  const PersonalSub2 = () => {
+  const PersonalPerformance = () => {
   
     const chats = [
       {
@@ -340,5 +340,5 @@ import {
     )
   }
   
-  export default PersonalSub2
+  export default PersonalPerformance
   

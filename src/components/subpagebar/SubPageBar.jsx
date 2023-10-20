@@ -33,8 +33,9 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
       }}
       icon={icon}
       routerLink={<Link to={to} />}
+      style={{zIndex: 2000}}
     >
-      <Typography style={{ fontSize: "17px", fontWeight: "590", textAlign: "center" }}>{title}</Typography>
+      <Typography style={{ fontSize: "17px", fontWeight: "590", textAlign: "center", zIndex: "2000" }}>{title}</Typography>
     </MenuItem>
   );
 };
@@ -102,7 +103,7 @@ const SubPageBar = ({subPages}) => {
     >
       <Sidebar
         backgroundColor={"background: linear-gradient(168deg, rgba(46, 51, 90, 0.50) 1.62%, rgba(28, 27, 51, 0.50) 95.72%)"}
-        className="!overflow-y-hidden z-[-100]"        
+        className="!overflow-y-hidden"        
         width={`${dashWidth}px`}
       >
         <Menu iconshape="square" className="!overflow-y-hidden">

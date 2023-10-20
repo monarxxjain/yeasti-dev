@@ -1,10 +1,10 @@
 import {Box} from "@mui/material";
-const PersonalSub6 = () => {
+const InventoryAddNewProduct = () => {
   return (
     <Box m="34px" className="!mx-[42px] max-w-[20rem] xxs:max-w-[30rem] md:max-w-[35rem] nr:!max-w-full ">
-        This is Personal Sub 6 
+        This is Inventory Add New Product
     </Box>
   )
 }
 
-export default PersonalSub6
+export default InventoryAddNewProduct
