@@ -104,7 +104,7 @@ const MyProSidebar = ({setSelectedTab}) => {
     },
     {
       title: "Suppliers",
-      to: "/suppliers/suppliers-list",
+      to: "/suppliers/supplier-list",
       icon: <SlideshowIcon />
     },
     {

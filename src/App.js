@@ -62,6 +62,7 @@ import AdministrationVacationRequests from "./pages/administration/VacationReque
 import AdministrationHRPolicies from "./pages/administration/HRPolicies";
 import AdministrationEmployeeTrainingManagement from "./pages/administration/EmployeeTrainingManagement";
 import AdministrationShiftScheduling from "./pages/administration/ShiftScheduling";
+
 import ReportsOverview from "./pages/reports/Overview";
 import ReportsSalesReports from "./pages/reports/SalesReports";
 import ReportsInventoryReports from "./pages/reports/InventoryReports";
@@ -71,6 +72,60 @@ import ReportsCutomerFeedback from "./pages/reports/CustomerFeedback";
 import ReportsFinancialReports from "./pages/reports/FinancialReports";
 import ReportsMarketingAnalysis from "./pages/reports/MarketingAnalysis";
 import ReportsSupplierAndContactReports from "./pages/reports/SupplierAndContactReports";
+
+import YeastiAskYeasti from "./pages/yeastiAI/AskYeasti";
+import YeastiHepAndguidance from "./pages/yeastiAI/HelpAndGuidance";
+import YeastiSavedQueries from "./pages/yeastiAI/SavedQueries";
+import YeastiFAQs from "./pages/yeastiAI/FAQ's";
+
+import CustomerCustomerList from "./pages/customers/CustomerList";
+import CustomerNewCustomer from "./pages/customers/NewCustomer";
+import CustomerFeedbackAndReviews from "./pages/customers/FeedbackAndReviews";
+import CustomerCustomerInsightsAndAnalytics from "./pages/customers/CustomerInsightsAndAnalytics";
+import CustomerOngoingCustomerInquiries from "./pages/customers/OngoingCustomerInquiries";
+import CustomerOther from "./pages/customers/Otehr";
+
+import SupplierSupplierList from "./pages/suppliers/SupplierList";
+import SupplierNewSupplier from "./pages/suppliers/NewSupplier";
+import SupplierSupplierInteraction from "./pages/suppliers/SupplierInteraction";
+import SupplierContractManagement from "./pages/suppliers/ContractManagement";
+import SupplierOngoingSupplierInquiries from "./pages/suppliers/OngoingSupplierInquiries";
+import SupplierOther from "./pages/suppliers/Other";
+
+import LogisticsTransportationManagement from "./pages/logistics/TransportationManagement";
+import LogisticsWarehouseManagement from "./pages/logistics/WarehouseManagement";
+import LogisticsInventoryTracking from "./pages/logistics/InventoryTracking";
+import LogisticsDeliveryScheduling from "./pages/logistics/DeliveryScheduling";
+import LogisticsRouteOptimization from "./pages/logistics/RouteOptimisation";
+import LogisticsLogisticsAnalytics from "./pages/logistics/LogisticsAnalytics";
+import LogisticsLogisticSupport from "./pages/logistics/LogisticSupport";
+
+import MarketingCampaignManagement from "./pages/marketing/CampaignManagement";
+import MarketingContentCreation from "./pages/marketing/ContentCreation";
+import MarketingCustomerEngagement from "./pages/marketing/CustomerEngagement";
+import MarketingSEOAndSEMManagement from "./pages/marketing/SEO_SEM_Management";
+import MarketingSocialMediaManagement from "./pages/marketing/SocialMediaManagement";
+import MarketingEmailMarketing from "./pages/marketing/EmailMarketing";
+import MarketingMarketingAnalytics from "./pages/marketing/MarketingAnalytics";
+import MarketingPromotionsAndEvents from "./pages/marketing/PromotionsAndEvents";
+
+import FinancialsBudgetManagement from "./pages/financials/BudgetManagement";
+import FinancialsInvoicing from "./pages/financials/Invoicing";
+import FinancialsExpenseTracking from "./pages/financials/ExpenseTracking";
+import FinancialsRevenueTracking from "./pages/financials/RevenueTracking";
+import FinancialsFinancialReporting from "./pages/financials/FinancialReporting";
+import FinancialsPayrollManagement from "./pages/financials/PayrollManagement";
+import FinancialsAssetManagement from "./pages/financials/AssetManagement";
+import FinancialsTaxManagement from "./pages/financials/TaxManagement";
+
+import ComplianceLicensingAndPermits from "./pages/compliance/LicensingAndPermits";
+import ComplianceRegulatoryReporting from "./pages/compliance/RegulatoryReporting";
+import ComplianceStandardsAndCertifications from "./pages/compliance/StandardsAndCertifications";
+import ComplianceAuditManagement from "./pages/compliance/AuditManagement";
+import ComplianceTrainingAndWorkshops from "./pages/compliance/TrainingAndWorkshops";
+import ComplianceViolationTracking from "./pages/compliance/ViolationTracking";
+import CompliancePolicyManagement from "./pages/compliance/PolicyManagement";
+import CompliancePartnerCompliance from "./pages/compliance/PartnerCompliance";
 
 const App = () => {
   const [theme, colorMode] = useMode();
@@ -145,6 +200,67 @@ const App = () => {
     {title: "HR Policies", to: "/administration/hr-policies"},
     {title: "Employee Training Management", to: "/administration/employee-training-management"}
   ]
+  const yeastiAISubPages = [
+    {title: "Ask Yeasti", to: "/yeasti/ask-yeasti"},
+    {title: "Saved Queries", to: "/yeasti/saved-queries"},
+    {title: "Help And Guidance", to: "/yeasti/help-and-guidance"},
+    {title: "FAQ's", to: "/yeasti/faqs"}
+  ]
+  const customersSubPages = [
+    {title: "Customer List", to: "/customers/customer-list"},
+    {title: "New Customer", to: "/customers/new-customer"},
+    {title: "Feedback And Reviews", to: "/customers/feedback-and-reviews"},
+    {title: "Customer Insights and Analytics", to: "/customers/customer-insights-and-analytics"},
+    {title: "Ongoing Customer Inquiries ", to: "/customers/ongoing-customer-inquiries "},
+    {title: "Other", to: "/customers/other"}, 
+  ]
+  const suppliersSubPages = [
+    {title: "Supplier List", to: "/suppliers/supplier-list"},
+    {title: "New Supplier", to: "/suppliers/new-supplier"},
+    {title: "Supplier Interaction", to: "/suppliers/supplier-interaction"},
+    {title: "Contract Management", to: "/suppliers/contract-management"},
+    {title: "Ongoing Supplier Inquiries ", to: "/suppliers/ongoing-supplier-inquiries "},
+    {title: "Other", to: "/suppliers/other"}, 
+  ]
+  const logisticsSubPages = [
+    {title: "Transportation Management", to: "/logistics/transportation-management"},
+    {title: "Warehouse Management", to: "/logistics/warehouse-management"},
+    {title: "Inventory Tracking", to: "/logistics/inventory-tracking"},
+    {title: "Delivery Scheduling", to: "/logistics/delivery-scheduling"},
+    {title: "Route Optimization", to: "/logistics/route-optimization"},
+    {title: "Logistics Analytics", to: "/logistics/logistics-analytics"}, 
+    {title: "Logistic Support", to: "/logistics/logistic-support"}, 
+  ]
+  const marketingSubPages = [
+    {title: "Campaign Management", to: "/marketing/campaign-management"},
+    {title: "Content Creation", to: "/marketing/content-creation"},
+    {title: "Customer Engagement", to: "/marketing/customer-engagement"},
+    {title: "SEO and SEM Management", to: "/marketing/seo-and-sem-management"},
+    {title: "Social Media Management", to: "/marketing/social-media-management"},
+    {title: "Email Marketing", to: "/marketing/email-marketing"}, 
+    {title: "Marketing Analytics", to: "/marketing/marketing-analytics"}, 
+    {title: "Promotions and Events", to: "/marketing/promotions-and-events"}, 
+  ]
+  const financialsSubPages = [
+    {title: "Budget Management", to: "/financials/budget-management"},
+    {title: "Invoicing", to: "/financials/invoicing"},
+    {title: "Expense Tracking", to: "/financials/expense-tracking"},
+    {title: "Revenue Tracking", to: "/financials/revenue-tracking"},
+    {title: "Financial Reporting", to: "/financials/financial-reporting"},
+    {title: "Payroll Management", to: "/financials/payroll-management"}, 
+    {title: "Asset Management", to: "/financials/asset-management"}, 
+    {title: "Tax Management", to: "/financials/tax-management"}, 
+  ]
+  const complianceSubPages = [
+    {title: "Licensing and Permits", to: "/compliance/licensing-and-permits"},
+    {title: "Regulatory Reporting", to: "/compliance/regulatory-reporting"},
+    {title: "Standards and Certifications", to: "/compliance/standards-and-certifications"},
+    {title: "Audit Management", to: "/compliance/audit-management"},
+    {title: "Training and Workshops", to: "/compliance/training-and-workshops"},
+    {title: "Violation Tracking", to: "/compliance/violation-tracking"}, 
+    {title: "Policy Management", to: "/compliance/policy-management"}, 
+    {title: "Partner Compliance", to: "/compliance/partner-compliance"}, 
+  ]
 
   window.addEventListener("orientationchange", ()=>{
     window.location.reload()
@@ -188,37 +304,37 @@ const App = () => {
     
     
       case "Yeasti Ai":
-        setSubPages(ordersSubPages)
+        setSubPages(yeastiAISubPages)
         break;
     
     
       case "Customers":
-        setSubPages(ordersSubPages)
+        setSubPages(customersSubPages)
         break;
     
     
       case "Suppliers":
-        setSubPages(ordersSubPages)
+        setSubPages(suppliersSubPages)
         break;
     
     
       case "Logistics":
-        setSubPages(ordersSubPages)
+        setSubPages(logisticsSubPages)
         break;
     
     
       case "Marketing":
-        setSubPages(ordersSubPages)
+        setSubPages(marketingSubPages)
         break;
     
     
       case "Financials":
-        setSubPages(ordersSubPages)
+        setSubPages(financialsSubPages)
         break;
     
     
       case "Compliance":
-        setSubPages(ordersSubPages)
+        setSubPages(complianceSubPages)
         break;
     
         
@@ -312,7 +428,67 @@ const App = () => {
                     <Route path="/administration/hr-policies" element={<AdministrationHRPolicies/>} />
                     <Route path="/administration/employee-training-management" element={<AdministrationEmployeeTrainingManagement/>} />
 
-                    
+                    {/* YeastiAI Paths */}
+                    <Route path="/yeasti/ask-yeasti" element={<YeastiAskYeasti />} />
+                    <Route path="/yeasti/saved-queries" element={<YeastiSavedQueries />} />
+                    <Route path="/yeasti/help-and-guidance" element={<YeastiHepAndguidance />} />
+                    <Route path="/yeasti/faqs" element={<YeastiFAQs />} />
+
+                    {/* Customers Paths */}
+                    <Route path="/customers/customer-list" element={<CustomerCustomerList />} />
+                    <Route path="/customers/new-customer" element={<CustomerNewCustomer />} />
+                    <Route path="/customers/feedback-and-reviews" element={<CustomerFeedbackAndReviews />} />
+                    <Route path="/customers/customer-insights-and-analytics" element={<CustomerCustomerInsightsAndAnalytics />} />
+                    <Route path="/customers/ongoing-customer-inquiries" element={<CustomerOngoingCustomerInquiries />} />
+                    <Route path="/customers/other" element={<CustomerOther />} />
+
+                    {/* Suppliers Paths */}
+                    <Route path="/suppliers/supplier-list" element={<SupplierSupplierList />} />
+                    <Route path="/suppliers/new-supplier" element={<SupplierNewSupplier />} />
+                    <Route path="/suppliers/supplier-interaction" element={<SupplierSupplierInteraction />} />
+                    <Route path="/suppliers/contract-management" element={<SupplierContractManagement />} />
+                    <Route path="/suppliers/ongoing-supplier-inquiries" element={<SupplierOngoingSupplierInquiries />} />
+                    <Route path="/suppliers/other" element={<SupplierOther />} />
+
+                    {/* Logistics Paths */}
+                    <Route path="/logistics/transportation-management" element={<LogisticsTransportationManagement />} />
+                    <Route path="/logistics/warehouse-management" element={<LogisticsWarehouseManagement />} />
+                    <Route path="/logistics/inventory-tracking" element={<LogisticsInventoryTracking />} />
+                    <Route path="/logistics/delivery-scheduling" element={<LogisticsDeliveryScheduling />} />
+                    <Route path="/logistics/route-optimization" element={<LogisticsRouteOptimization />} />
+                    <Route path="/logistics/logistics-analytics" element={<LogisticsLogisticsAnalytics />} />
+                    <Route path="/logistics/logistic-support" element={<LogisticsLogisticSupport />} />
+
+                    {/* Marketing Paths */}
+                    <Route path="/marketing/campaign-management" element={<MarketingCampaignManagement />} />
+                    <Route path="/marketing/content-creation" element={<MarketingContentCreation />} />
+                    <Route path="/marketing/customer-engagement" element={<MarketingCustomerEngagement />} />
+                    <Route path="/marketing/seo-and-sem-management" element={<MarketingSEOAndSEMManagement />} />
+                    <Route path="/marketing/social-media-management" element={<MarketingSocialMediaManagement />} />
+                    <Route path="/marketing/email-marketing" element={<MarketingEmailMarketing />} />
+                    <Route path="/marketing/marketing-analytics" element={<MarketingMarketingAnalytics />} />
+                    <Route path="/marketing/promotions-and-events" element={<MarketingPromotionsAndEvents />} />
+
+                    {/* Financials Paths */}
+                    <Route path="/financials/budget-management" element={<FinancialsBudgetManagement />} />
+                    <Route path="/financials/invoicing" element={<FinancialsInvoicing />} />
+                    <Route path="/financials/expense-tracking" element={<FinancialsExpenseTracking />} />
+                    <Route path="/financials/revenue-tracking" element={<FinancialsRevenueTracking />} />
+                    <Route path="/financials/financial-reporting" element={<FinancialsFinancialReporting />} />
+                    <Route path="/financials/payroll-management" element={<FinancialsPayrollManagement />} />
+                    <Route path="/financials/asset-management" element={<FinancialsAssetManagement />} />
+                    <Route path="/financials/tax-management" element={<FinancialsTaxManagement />} />
+
+                    {/* Compliance Paths */}
+                    <Route path="/compliance/licensing-and-permits" element={<ComplianceLicensingAndPermits />} />
+                    <Route path="/compliance/regulatory-reporting" element={<ComplianceRegulatoryReporting />} />
+                    <Route path="/compliance/standards-and-certifications" element={<ComplianceStandardsAndCertifications />} />
+                    <Route path="/compliance/audit-management" element={<ComplianceAuditManagement />} />
+                    <Route path="/compliance/training-and-workshops" element={<ComplianceTrainingAndWorkshops />} />
+                    <Route path="/compliance/violation-tracking" element={<ComplianceViolationTracking />} />
+                    <Route path="/compliance/policy-management" element={<CompliancePolicyManagement />} />
+                    <Route path="/compliance/partner-compliance" element={<CompliancePartnerCompliance />} />
+
                   </Routes>
                 </MySubPageSidebarProvider>
             </main>
