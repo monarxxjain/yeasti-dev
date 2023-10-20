@@ -15,6 +15,7 @@ import MusicVideoIcon from '@mui/icons-material/MusicVideo';
 import SubscriptionsOutlinedIcon from '@mui/icons-material/SubscriptionsOutlined';
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MacButtonsIcon from "../../../assets/sidebar/MacButtonsIcon";
+
 const Item = ({ title, to, icon, selected, setSelected, setSelectedTab }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode)

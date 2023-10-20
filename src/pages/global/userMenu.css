@@ -10,7 +10,7 @@
   }
   
   .side-menu.open {
-    width: 310px;
+    width: 350px;
   }
   
   .toggle-button {
@@ -30,4 +30,14 @@
     color: white;
     /* Add your content styles here */
   }
-  
+  .menu-items{
+    border-bottom: 1px solid transparent;
+    border-image:  linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+    border-image-slice: 1
+  }
+
+  @media (max-width: 500px) {
+    .side-menu.open {
+      width: 100%;
+    }
+  }
