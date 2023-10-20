@@ -27,6 +27,30 @@ import PersonalTraining from "./pages/personal/Training";
 import PersonalOther from "./pages/personal/Other";
 
 import InventoryOverview from "./pages/inventory/Overview";
+import InventoryProductList from "./pages/inventory/ProductList";
+import InventoryAddNewProduct from "./pages/inventory/AddNewProduct";
+import InventoryEditProduct from "./pages/inventory/EditProduct";
+import InventoryStockManagement from "./pages/inventory/StockManagement";
+import InventoryAnalytics from "./pages/inventory/Analytics";
+import InventoryAuditing from "./pages/inventory/Auditing";
+import InventoryOther from "./pages/inventory/Other";
+
+import SalesOverview from "./pages/sales/Overview";
+import SalesTargets from "./pages/sales/SalesTargets";
+import SalesByRegion from "./pages/sales/SalesByRegion";
+import SalesTrends from "./pages/sales/SalesTrends";
+import SalesForecasting from "./pages/sales/Sales.Forecasting";
+import SalesRevenueAnalysis from "./pages/sales/RevenueAnalysis";
+import SalesInvoices from "./pages/sales/SalesInvoices";
+import SalesRefundsAndReturns from "./pages/sales/RefundsAndReturns";
+import SalesPerformance from "./pages/sales/Performance";
+import OrdersOverview from "./pages/orders/Overview";
+import OrdersNewOrder from "./pages/orders/NewOrder";
+import OrdersPendingOrders from "./pages/orders/PendingOrders";
+import OrdersHistory from "./pages/orders/OrderHistory";
+import OrdersTracking from "./pages/orders/OrderTracking";
+import OrdersDeliveryManagement from "./pages/orders/DeliveryManagement";
+import OrdersOther from "./pages/orders/Other";
 
 const App = () => {
   const [theme, colorMode] = useMode();
@@ -50,6 +74,37 @@ const App = () => {
     {title: "Training", to: "/personal/training"}, 
     {title: "Others", to: "/personal/others"}
   ]
+  const inventorySubPages = [
+    {title: "Overview", to: "/inventory/overview"},
+    {title: "Product List", to: "/inventory/product-list"},
+    {title: "Add New Product", to: "/inventory/add-new-product"},
+    {title: "Edit Product", to: "/inventory/edit-product"},
+    {title: "Stock Management", to: "/inventory/stock-management"},
+    {title: "Analytics", to: "/inventory/analytics"}, 
+    {title: "Auditing", to: "/inventory/auditing"}, 
+    {title: "Others", to: "/inventory/other"}
+  ]
+  const salesSubPages = [
+    {title: "Overview", to: "/sales/overview"},
+    {title: "Sales Targets", to: "/sales/sales-targets"},
+    {title: "Sales By Region", to: "/sales/sales-by-region"},
+    {title: "Sales Trends", to: "/sales/sales-trends"},
+    {title: "Sales Forecasting", to: "/sales/sales-forecasting"},
+    {title: "Revenue Analysis", to: "/sales/revenue-analysis"}, 
+    {title: "Sales Invoices", to: "/sales/sales-invoices"}, 
+    {title: "Refunds And Returns", to: "/sales/refunds-and-returns"},
+    {title: "Performance", to: "/sales/performance"}
+  ]
+  const ordersSubPages = [
+    {title: "Overview", to: "/orders/overview"},
+    {title: "New Order", to: "/orders/new-order"},
+    {title: "Pending Orders", to: "/orders/pending-orders"},
+    {title: "Order History", to: "/orders/order-history"},
+    {title: "Order Tracking", to: "/orders/order-tracking"},
+    {title: "Delivery Management", to: "/orders/delivery-management"}, 
+    {title: "Other", to: "/orders/other"}
+  ]
+
   window.addEventListener("orientationchange", ()=>{
     window.location.reload()
   })
@@ -68,6 +123,64 @@ const App = () => {
         setSubPages(personalSubPages)
         break;
     
+      case "Inventory":
+        setSubPages(inventorySubPages)
+        break;
+    
+      case "Sales":
+        setSubPages(salesSubPages)
+        break;
+    
+      case "Orders":
+        setSubPages(ordersSubPages)
+        break;
+    
+    
+      case "Reports":
+        setSubPages(ordersSubPages)
+        break;
+    
+    
+      case "Administration":
+        setSubPages(ordersSubPages)
+        break;
+    
+    
+      case "Yeasti Ai":
+        setSubPages(ordersSubPages)
+        break;
+    
+    
+      case "Customers":
+        setSubPages(ordersSubPages)
+        break;
+    
+    
+      case "Suppliers":
+        setSubPages(ordersSubPages)
+        break;
+    
+    
+      case "Logistics":
+        setSubPages(ordersSubPages)
+        break;
+    
+    
+      case "Marketing":
+        setSubPages(ordersSubPages)
+        break;
+    
+    
+      case "Financials":
+        setSubPages(ordersSubPages)
+        break;
+    
+    
+      case "Compliance":
+        setSubPages(ordersSubPages)
+        break;
+    
+        
       default:
         setSubPages(dashboardSubPages)
         break;
@@ -106,8 +219,36 @@ const App = () => {
                     <Route path="/personal/training" element={<PersonalTraining/>} />
                     <Route path="/personal/others" element={<PersonalOther/>} />
 
+                    {/* Inventory Paths */}
                     <Route path="/inventory/overview" element={<InventoryOverview />} />
+                    <Route path="/inventory/product-list" element={<InventoryProductList />} />
+                    <Route path="/inventory/add-new-product" element={<InventoryAddNewProduct />} />
+                    <Route path="/inventory/edit-product" element={<InventoryEditProduct />} />
+                    <Route path="/inventory/stock-management" element={<InventoryStockManagement />} />
+                    <Route path="/inventory/analytics" element={<InventoryAnalytics />} />
+                    <Route path="/inventory/auditing" element={<InventoryAuditing />} />
+                    <Route path="/inventory/other" element={<InventoryOther />} />
                     
+                    {/* Sales Paths */}
+                    <Route path="/sales/overview" element={<SalesOverview />} />
+                    <Route path="/sales/sales-targets" element={<SalesTargets />} />
+                    <Route path="/sales/sales-by-region" element={<SalesByRegion />} />
+                    <Route path="/sales/sales-trends" element={<SalesTrends />} />
+                    <Route path="/sales/sales-forecasting" element={<SalesForecasting />} />
+                    <Route path="/sales/revenue-analysis" element={<SalesRevenueAnalysis />} />
+                    <Route path="/sales/sales-invoices" element={<SalesInvoices />} />
+                    <Route path="/sales/refunds-and-returns" element={<SalesRefundsAndReturns />} />
+                    <Route path="/sales/performance" element={<SalesPerformance />} />
+
+                    {/* Orders Paths */}
+                    <Route path="/orders/overview" element={<OrdersOverview />} />
+                    <Route path="/orders/new-order" element={<OrdersNewOrder />} />
+                    <Route path="/orders/pending-orders" element={<OrdersPendingOrders />} />
+                    <Route path="/orders/order-history" element={<OrdersHistory />} />
+                    <Route path="/orders/order-tracking" element={<OrdersTracking />} />
+                    <Route path="/orders/delivery-management" element={<OrdersDeliveryManagement />} />
+                    <Route path="/orders/other" element={<OrdersOther />} />
+
                     
                   </Routes>
                 </MySubPageSidebarProvider>

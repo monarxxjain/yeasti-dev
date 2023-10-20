@@ -68,7 +68,7 @@ const MyProSidebar = ({setSelectedTab}) => {
       icon: <SmartDisplayOutlinedIcon />
     },
     {
-      title: "inventory",
+      title: "Inventory",
       to: "/inventory/overview",
       icon: <SubscriptionsOutlinedIcon />
     },

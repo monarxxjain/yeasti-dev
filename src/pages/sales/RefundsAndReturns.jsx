@@ -1,10 +1,10 @@
 import {Box} from "@mui/material";
-const InventoryProductList = () => {
+const SalesRefundsAndReturns = () => {
   return (
     <Box m="34px" className="!mx-[42px] max-w-[20rem] xxs:max-w-[30rem] md:max-w-[35rem] nr:!max-w-full ">
-        This is Inventory Product List
+        This is Sales Refunds And Returns
     </Box>
   )
 }
 
-export default InventoryProductList
+export default SalesRefundsAndReturns
