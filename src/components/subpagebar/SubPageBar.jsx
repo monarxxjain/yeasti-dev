@@ -102,7 +102,7 @@ const SubPageBar = ({subPages}) => {
     >
       <Sidebar
         backgroundColor={"background: linear-gradient(168deg, rgba(46, 51, 90, 0.50) 1.62%, rgba(28, 27, 51, 0.50) 95.72%)"}
-        className="!overflow-y-hidden"        
+        className="!overflow-y-hidden z-[-100]"        
         width={`${dashWidth}px`}
       >
         <Menu iconshape="square" className="!overflow-y-hidden">

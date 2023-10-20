@@ -25,6 +25,7 @@ import PersonalSub4 from "./pages/personal/PersonalSub4";
 import PersonalSub5 from "./pages/personal/PersonalSub5";
 import PersonalSub6 from "./pages/personal/PersonalSub6";
 import PersonalSub7 from "./pages/personal/PersonalSub7";
+// import { MyUserMenuProvider } from "./pages/global/userMenu/userMenuContext";
 
 const App = () => {
   const [theme, colorMode] = useMode();
@@ -79,35 +80,34 @@ const App = () => {
         <MyProSidebarProvider setSelectedTab={setSelectedTab}>
           <div id="rightBody" style={{ height: "100%", width: "100%" }}>
             <main style={{display: "block", width: "min-content !important"}}>
-              <Topbar />
-              <MySubPageSidebarProvider subPages={subPages}>
-                <Routes>
+                <Topbar />
+                <MySubPageSidebarProvider subPages={subPages}>
+                  <Routes>
 
-                  {/* Dashboard Paths */}
-                  <Route path="/" element={<Navigate to="/dashboard/overview"/>}/>
-                  <Route path="/dashboard/overview" element={<><DashboardOverview/></>} />
-                  <Route path="/dashboard/operational-snapshot" element={<><DashboardOperationalSnapshot/></>} />
-                  <Route path="/dashboard/sales-insights" element={<><DashboardSalesInsights/></>} />
-                  <Route path="/dashboard/marketing" element={<><DashboardMarketing/></>} />
-                  <Route path="/dashboard/supply-chain" element={<><DashboardSupplyChain/></>} />
-                  <Route path="/dashboard/employee-productivity" element={<><DashboardEmployeeProductivity/></>} />
-                  <Route path="/dashboard/customer-interactions" element={<><DashboardCustomerInteractions/></>} />
-                  <Route path="/dashboard/financials" element={<><DashboardFinancials/></>} />
-                  <Route path="/dashboard/others" element={<><DashboardOthers/></>} />
+                    {/* Dashboard Paths */}
+                    <Route path="/" element={<Navigate to="/dashboard/overview"/>}/>
+                    <Route path="/dashboard/overview" element={<><DashboardOverview/></>} />
+                    <Route path="/dashboard/operational-snapshot" element={<><DashboardOperationalSnapshot/></>} />
+                    <Route path="/dashboard/sales-insights" element={<><DashboardSalesInsights/></>} />
+                    <Route path="/dashboard/marketing" element={<><DashboardMarketing/></>} />
+                    <Route path="/dashboard/supply-chain" element={<><DashboardSupplyChain/></>} />
+                    <Route path="/dashboard/employee-productivity" element={<><DashboardEmployeeProductivity/></>} />
+                    <Route path="/dashboard/customer-interactions" element={<><DashboardCustomerInteractions/></>} />
+                    <Route path="/dashboard/financials" element={<><DashboardFinancials/></>} />
+                    <Route path="/dashboard/others" element={<><DashboardOthers/></>} />
 
-                  {/* Personal Paths */}
-                  <Route path="/personal/sub1" element={<><PersonalSub1/></>} />
-                  <Route path="/personal/sub2" element={<><PersonalSub2/></>} />
-                  <Route path="/personal/sub3" element={<><PersonalSub3/></>} />
-                  <Route path="/personal/sub4" element={<><PersonalSub4/></>} />
-                  <Route path="/personal/sub5" element={<><PersonalSub5/></>} />
-                  <Route path="/personal/sub6" element={<><PersonalSub6/></>} />
-                  <Route path="/personal/sub7" element={<><PersonalSub7/></>} />
+                    {/* Personal Paths */}
+                    <Route path="/personal/sub1" element={<><PersonalSub1/></>} />
+                    <Route path="/personal/sub2" element={<><PersonalSub2/></>} />
+                    <Route path="/personal/sub3" element={<><PersonalSub3/></>} />
+                    <Route path="/personal/sub4" element={<><PersonalSub4/></>} />
+                    <Route path="/personal/sub5" element={<><PersonalSub5/></>} />
+                    <Route path="/personal/sub6" element={<><PersonalSub6/></>} />
+                    <Route path="/personal/sub7" element={<><PersonalSub7/></>} />
 
-                  
-                </Routes>
-              </MySubPageSidebarProvider>
-
+                    
+                  </Routes>
+                </MySubPageSidebarProvider>
             </main>
           </div>
         </MyProSidebarProvider>
