@@ -44,6 +44,7 @@ import SalesRevenueAnalysis from "./pages/sales/RevenueAnalysis";
 import SalesInvoices from "./pages/sales/SalesInvoices";
 import SalesRefundsAndReturns from "./pages/sales/RefundsAndReturns";
 import SalesPerformance from "./pages/sales/Performance";
+
 import OrdersOverview from "./pages/orders/Overview";
 import OrdersNewOrder from "./pages/orders/NewOrder";
 import OrdersPendingOrders from "./pages/orders/PendingOrders";
@@ -51,6 +52,25 @@ import OrdersHistory from "./pages/orders/OrderHistory";
 import OrdersTracking from "./pages/orders/OrderTracking";
 import OrdersDeliveryManagement from "./pages/orders/DeliveryManagement";
 import OrdersOther from "./pages/orders/Other";
+
+import AdministrationAddNewUser from "./pages/administration/AddNewuser";
+import AdministrationEditUser from "./pages/administration/EditUser";
+import AdministrationSystemSettings from "./pages/administration/SystemSettings";
+import AdministrationBillingAndPayments from "./pages/administration/BillingAndPayments";
+import AdministrationSupportAndHelpdesk from "./pages/administration/SupportAndHelpdesk";
+import AdministrationVacationRequests from "./pages/administration/VacationRequests";
+import AdministrationHRPolicies from "./pages/administration/HRPolicies";
+import AdministrationEmployeeTrainingManagement from "./pages/administration/EmployeeTrainingManagement";
+import AdministrationShiftScheduling from "./pages/administration/ShiftScheduling";
+import ReportsOverview from "./pages/reports/Overview";
+import ReportsSalesReports from "./pages/reports/SalesReports";
+import ReportsInventoryReports from "./pages/reports/InventoryReports";
+import ReportsOrderReports from "./pages/reports/OrderReports";
+import ReportsEmployeePerformanceReports from "./pages/reports/EmployeePerformanceReports";
+import ReportsCutomerFeedback from "./pages/reports/CustomerFeedback";
+import ReportsFinancialReports from "./pages/reports/FinancialReports";
+import ReportsMarketingAnalysis from "./pages/reports/MarketingAnalysis";
+import ReportsSupplierAndContactReports from "./pages/reports/SupplierAndContactReports";
 
 const App = () => {
   const [theme, colorMode] = useMode();
@@ -104,6 +124,27 @@ const App = () => {
     {title: "Delivery Management", to: "/orders/delivery-management"}, 
     {title: "Other", to: "/orders/other"}
   ]
+  const reportsSubPages = [
+    {title: "Overview", to: "/reports/overview"},
+    {title: "Sales Reports", to: "/reports/sales-reports"},
+    {title: "Inventory Reports", to: "/reports/inventory-reports"},
+    {title: "Employee Performance Reports", to: "/reports/employee-performance-reports"},
+    {title: "Customer Feedback", to: "/reports/customer-feedback"},
+    {title: "Financial Reports", to: "/reports/financial-reports"}, 
+    {title: "Marketing Analysis", to: "/reports/marketing-analysis"},
+    {title: "Supplier And Contact Reports", to: "/reports/supplier-and-contact-reports"}
+  ]
+  const administrationSubPages = [
+    {title: "Add New User", to: "/administration/add-new-user"},
+    {title: "Edit User", to: "/administration/edit-user"},
+    {title: "System Settings", to: "/administration/system-settings"},
+    {title: "Billings And Payments", to: "/administration/billings-and-payments"},
+    {title: "Support And Helpdesk", to: "/administration/support-and-helpdesk"},
+    {title: "Shift Scheduling", to: "/administration/shift-scheduling"}, 
+    {title: "Vacation Requests", to: "/administration/vacation-requests"},
+    {title: "HR Policies", to: "/administration/hr-policies"},
+    {title: "Employee Training Management", to: "/administration/employee-training-management"}
+  ]
 
   window.addEventListener("orientationchange", ()=>{
     window.location.reload()
@@ -137,12 +178,12 @@ const App = () => {
     
     
       case "Reports":
-        setSubPages(ordersSubPages)
+        setSubPages(reportsSubPages)
         break;
     
     
       case "Administration":
-        setSubPages(ordersSubPages)
+        setSubPages(administrationSubPages)
         break;
     
     
@@ -248,6 +289,28 @@ const App = () => {
                     <Route path="/orders/order-tracking" element={<OrdersTracking />} />
                     <Route path="/orders/delivery-management" element={<OrdersDeliveryManagement />} />
                     <Route path="/orders/other" element={<OrdersOther />} />
+
+                    {/* Reports Paths */}
+                    <Route path="/reports/overview" element={<ReportsOverview />} />
+                    <Route path="/reports/sales-reports" element={<ReportsSalesReports />} />
+                    <Route path="/reports/inventory-reports" element={<ReportsInventoryReports />} />
+                    <Route path="/reports/order-reports" element={<ReportsOrderReports />} />
+                    <Route path="/reports/employee-performance-reports" element={<ReportsEmployeePerformanceReports />} />
+                    <Route path="/reports/customer-feedback" element={<ReportsCutomerFeedback />} />  
+                    <Route path="/reports/financial-reports" element={<ReportsFinancialReports />} />  
+                    <Route path="/reports/marketing-analysis" element={<ReportsMarketingAnalysis />} />  
+                    <Route path="/reports/supplier-and-contact-reports" element={<ReportsSupplierAndContactReports />} />  
+
+                    {/* Administration Paths */}
+                    <Route path="/administration/add-new-user" element={<AdministrationAddNewUser />} />
+                    <Route path="/administration/edit-user" element={<AdministrationEditUser/>} />
+                    <Route path="/administration/system-settings" element={<AdministrationSystemSettings/>} />
+                    <Route path="/administration/billings-and-payments" element={<AdministrationBillingAndPayments/>} />
+                    <Route path="/administration/support-and-helpdesk" element={<AdministrationSupportAndHelpdesk/>} />
+                    <Route path="/administration/shift-scheduling" element={<AdministrationShiftScheduling/>} />
+                    <Route path="/administration/vacation-requests" element={<AdministrationVacationRequests/>} />
+                    <Route path="/administration/hr-policies" element={<AdministrationHRPolicies/>} />
+                    <Route path="/administration/employee-training-management" element={<AdministrationEmployeeTrainingManagement/>} />
 
                     
                   </Routes>
