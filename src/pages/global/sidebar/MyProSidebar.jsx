@@ -16,7 +16,7 @@ import SubscriptionsOutlinedIcon from '@mui/icons-material/SubscriptionsOutlined
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MacButtonsIcon from "../../../assets/sidebar/MacButtonsIcon";
 
-const Item = ({ title, to, icon, selected, setSelected, setSelectedTab }) => {
+const Item = ({ title, to, icon, selected, setSelected, setSelectedTab, collapseSidebar, mobileView }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode)
 
@@ -30,7 +30,13 @@ const Item = ({ title, to, icon, selected, setSelected, setSelectedTab }) => {
         borderTop: selected === title ? "1px solid transparent" : "none",
         position: "relative"
       }}
-      onClick={() =>{ setSelected(title); setSelectedTab(title)}}
+      onClick={() => { 
+        setSelected(title); 
+        setSelectedTab(title);
+        if(mobileView){
+          collapseSidebar();
+        }
+      }}
       icon={icon}
       routerLink={<Link to={to} />}
     >
@@ -245,6 +251,8 @@ const MyProSidebar = ({setSelectedTab}) => {
                 selected={selected}
                 setSelected={setSelected}
                 setSelectedTab={setSelectedTab}
+                collapseSidebar={collapseSidebar}
+                mobileView={mobileView}
               />
             })}
           </Box>}
