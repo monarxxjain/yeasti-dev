@@ -128,7 +128,7 @@ const UserMenu = ({isOpen, toggleMenu}) => {
   const [active, setActive] = useState("My Profile")
 
   return (
-    <div className={`side-menu  z-[12000] backdrop-blur-3xl ${isOpen ? 'open' : ''}`} style={{background: "linear-gradient(173deg, rgba(123, 99, 151, 0.70) 1.18%, rgba(28, 27, 51, 0.70) 95.88%)"}}>
+    <div className={`side-menu  z-[12000] ${isOpen ? 'open' : ''}`} style={{background: "linear-gradient(173deg, rgba(123, 99, 151, 0.85) 1.18%, rgba(28, 27, 51, 0.85) 95.88%)"}}>
       <div className="menu-content flex flex-col gap-4">
         <div className="flex gap-4 px-4">
           <IconButton type="button" className="!pt-[5px] !pe-[4px] !pb-[6px] !ps-[4px] !h-min" onClick={toggleMenu}>
